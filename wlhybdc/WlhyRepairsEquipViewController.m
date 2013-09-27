@@ -83,13 +83,21 @@
 {
     [super viewWillAppear:animated];
     
-    NSLog(@"barDecode :: %@", _barDecode);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    self.view = nil;
+    self.wlhyTextDelegate = nil;
+    self.nameArray = nil;
+    self.imagePickerVC = nil;
+    self.bigPicScrollView = nil;
+    self.picScrollView = nil;
+    self.phoneTextField = nil;
+    self.contentTextView = nil;
+    self.barDecode = nil;
 }
 
 #pragma mark - button Handler
@@ -129,12 +137,11 @@
      picPaths	损坏部位图片路径，多张用逗号隔开
      */
     
-    Users *currentUsers = [DBM dbm].currentUsers;
     
     [self sendRequest:
      
-     @{@"memberid": currentUsers.memberId,
-     @"pwd": currentUsers.clearPwd,
+     @{@"memberid": ([DBM dbm].currentUsers.memberId == NULL) ? @"0" : [DBM dbm].currentUsers.memberId,
+     @"pwd": ([DBM dbm].currentUsers.clearPwd == NULL) ? @"" : [DBM dbm].currentUsers.clearPwd,
      @"barcodeid": _barDecode,
      @"phone": _phoneTextField.text,
      @"repairDescription": _contentTextView.text,

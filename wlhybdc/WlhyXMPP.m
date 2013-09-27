@@ -54,6 +54,11 @@ static WlhyXMPP* _WlhyXMPP = nil;
     }
 }
 
+- (void)forceConnect
+{
+    
+}
+
 - (void)setMateToMyTrain
 {
     [self setMate:[DBM dbm].usersExt.serviceAccount serverName:[DBM dbm].currentUsers.imServerName];

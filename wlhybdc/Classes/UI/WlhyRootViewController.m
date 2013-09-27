@@ -51,5 +51,12 @@
     [super viewDidUnload];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    self.view = nil;
+    self.backImage = nil;
+}
 
 @end

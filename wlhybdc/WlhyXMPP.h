@@ -52,6 +52,7 @@ typedef enum {
 - (void)sendMessage:(NSString *)messageContent;
 
 - (void)connect;
+- (void)forceConnect;
 - (void)disconnect;
 
 - (void)goOnLine;

@@ -73,20 +73,15 @@
     }
 }
 
-- (void)viewDidUnload
-{
-    self.instructionPath = nil;
-    self.fileManage = nil;
-    self.webView = nil;
-    self.downLoader = nil;
-    
-    [super viewDidUnload];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    
+    self.view = nil;
+    self.instructionPath = nil;
+    self.webView = nil;
+    self.downLoader = nil;
 }
 
 - (void)back:(id)sender

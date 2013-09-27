@@ -74,17 +74,18 @@
     _contentTextView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.75];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    NSLog(@"barDecode :: %@", _barDecode);
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    self.view = nil;
+    self.wlhyTextDelegate = nil;
+    self.ratingView = nil;
+    self.phoneTextField = nil;
+    self.contentTextView = nil;
+    self.barDecode = nil;
+    
 }
 
 #pragma mark - button Handler
@@ -110,15 +111,14 @@
      starLevel
      */
     
-    Users *currentUsers = [DBM dbm].currentUsers;
     
     //密码为明文
     [self sendRequest:
      
-     @{@"memberid": currentUsers.memberId,
-     @"pwd": currentUsers.clearPwd,
+     @{@"memberid": ([DBM dbm].currentUsers.memberId == NULL) ? @"0" : [DBM dbm].currentUsers.memberId,
+     @"pwd": ([DBM dbm].currentUsers.clearPwd == NULL) ? @"" : [DBM dbm].currentUsers.clearPwd,
      @"barcodeid": _barDecode,
-     @"phone": currentUsers.phone,
+     @"phone": _phoneTextField.text,
      @"context": _contentTextView.text,
      @"starLevel": [NSString stringWithFormat:@"%i", (int)_ratingView.rating]
      }

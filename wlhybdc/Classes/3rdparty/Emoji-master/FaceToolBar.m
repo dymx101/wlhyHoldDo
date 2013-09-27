@@ -60,25 +60,23 @@
         [self setBackgroundImage:[[UIImage imageNamed:@"keyBoardBack"] resizableImageWithCapInsets:insets] forToolbarPosition:0 barMetrics:0];
         [self setBarStyle:UIBarStyleBlack];
        
+        
+         //音频按钮
+         voiceButton = [UIButton buttonWithType:UIButtonTypeCustom];
+         voiceButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin;
+         [voiceButton setBackgroundImage:[UIImage imageNamed:@"Voice"] forState:UIControlStateNormal];
+         [voiceButton addTarget:self action:@selector(voiceChange) forControlEvents:UIControlEventTouchUpInside];
+         voiceButton.frame = CGRectMake(5,self.bounds.size.height-38.0f,buttonWh,buttonWh);
+         [self addSubview:voiceButton];
+         
+        
         //可以自适应高度的文本输入框
-        textView = [[UIExpandingTextView alloc] initWithFrame:CGRectMake(5, 5, 250, 36)];   //x 40->5
+        textView = [[UIExpandingTextView alloc] initWithFrame:CGRectMake(10+buttonWh, 5, 320-75-buttonWh, 36)];   //x 40->5
         textView.internalTextView.scrollIndicatorInsets = UIEdgeInsetsMake(4.0f, 0.0f, 10.0f, 0.0f);
         [textView.internalTextView setReturnKeyType:UIReturnKeySend];
         textView.delegate = self;
         textView.maximumNumberOfLines=5;
         [self addSubview:textView];
-        
-        
-        /*
-        //音频按钮
-        voiceButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        voiceButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin;
-        [voiceButton setBackgroundImage:[UIImage imageNamed:@"Voice"] forState:UIControlStateNormal];
-        [voiceButton addTarget:self action:@selector(voiceChange) forControlEvents:UIControlEventTouchUpInside];
-        voiceButton.frame = CGRectMake(5,self.bounds.size.height-38.0f,buttonWh,buttonWh);
-        [self addSubview:voiceButton];
-        voiceButton.hidden = YES;
-        */
         
         
         /*
@@ -149,6 +147,13 @@
     return self;
 }
 
+- (void)setInputContent:(NSString *)content
+{
+    textView.text = content;
+}
+
+#pragma mark - scrollViewDelegate
+
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
     int page = scrollView.contentOffset.x / 320;//通过滚动的偏移量来判断目前页面所对应的小白点
@@ -210,7 +215,9 @@
 -(void)voiceChange
 {
     [self dismissKeyBoard];
+    [delegate voiceButtonAction];
 }
+
 -(void)disFaceKeyboard
 {
     //如果直接点击表情，通过toolbar的位置来判断

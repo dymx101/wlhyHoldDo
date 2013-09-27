@@ -82,7 +82,13 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
+    self.view = nil;
+    self.wlhyTextDelegate = nil;
+    self.phoneTextField = nil;
+    self.addressTextView = nil;
+    self.notesTextView = nil;
+    self.barDecode = nil;
 }
 
 #pragma mark - button Handler
@@ -102,8 +108,6 @@
         return;
     }
     
-    Users *currentUsers = [DBM dbm].currentUsers;
-    
     /*
      obj.put("memberid", memberid);
      obj.put("barcodeid", barcodeId);
@@ -114,8 +118,8 @@
     
     [self sendRequest:
      
-     @{@"memberid": currentUsers.memberId,
-     @"pwd": currentUsers.clearPwd,
+     @{@"memberid": ([DBM dbm].currentUsers.memberId == NULL) ? @"0" : [DBM dbm].currentUsers.memberId,
+     @"pwd": ([DBM dbm].currentUsers.clearPwd == NULL) ? @"" : [DBM dbm].currentUsers.clearPwd,
      @"barcodeid": _barDecode,
      @"phone": _phoneTextField.text,
      @"address": _addressTextView.text,

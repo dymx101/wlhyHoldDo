@@ -278,7 +278,7 @@ const int pageSize = 5;
         }
         
         [self presentModalViewController:destVC animated:YES];
-    } else {
+    } else if (_barDecode && _equipInfo.count <= 0) {
         if ([_barDecode hasPrefix:@"DECODE:"]) {
             _barDecode = [_barDecode substringWithRange:NSMakeRange(7, 16)];   //0001000000290001
         }
@@ -294,20 +294,17 @@ const int pageSize = 5;
     }
 }
 
-- (void)viewDidUnload
+
+- (void)didReceiveMemoryWarning
 {
-    self.barDecode = nil;
+    [super didReceiveMemoryWarning];
+    
+    self.view = nil;
     self.equipInfo = nil;
     self.equipPicArray = nil;
     self.instructionPath = nil;
     self.evaluateArray = nil;
     
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - button Handler
@@ -415,11 +412,12 @@ const int pageSize = 5;
                  page
                  */
                 
+                
                 [self sendRequest:
                  
                  @{
-                 @"memberid": [DBM dbm].currentUsers.memberId,
-                 @"pwd": [DBM dbm].currentUsers.clearPwd,
+                 @"memberid": ([DBM dbm].currentUsers.memberId == NULL) ? @"0" : [DBM dbm].currentUsers.memberId,
+                 @"pwd": ([DBM dbm].currentUsers.clearPwd == NULL) ? @"" : [DBM dbm].currentUsers.clearPwd,
                  @"barcodeid": _barDecode,
                  @"pageSize": [NSNumber numberWithInt:pageSize],
                  @"page": [NSNumber numberWithInt:++currentPage]
@@ -618,6 +616,8 @@ const int pageSize = 5;
             cell.textLabel.textAlignment = UITextAlignmentCenter;
             cell.textLabel.backgroundColor = [UIColor clearColor];
             cell.backgroundColor = [UIColor whiteColor];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.userInteractionEnabled = NO;
             
             return cell;
         }
@@ -708,8 +708,8 @@ const int pageSize = 5;
         [self sendRequest:
          
          @{
-         @"memberid": [DBM dbm].currentUsers.memberId,
-         @"pwd": [DBM dbm].currentUsers.clearPwd,
+         @"memberid": ([DBM dbm].currentUsers.memberId == NULL) ? @"0" : [DBM dbm].currentUsers.memberId,
+         @"pwd": ([DBM dbm].currentUsers.clearPwd == NULL) ? @"" : [DBM dbm].currentUsers.clearPwd,
          @"barcodeid": _barDecode,
          @"pageSize": [NSNumber numberWithInt:pageSize],
          @"page": [NSNumber numberWithInt:++currentPage]

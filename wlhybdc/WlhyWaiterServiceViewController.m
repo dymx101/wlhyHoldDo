@@ -15,9 +15,10 @@
 #import "FileManage.h"
 #import "FaceToolBar.h"
 #import "CommentTrainView.h"
+#import "iflyMSC/IFlySpeechRecognizerDelegate.h"
+#import "iflyMSC/IFlySpeechRecognizer.h"
 
-
-@interface WlhyWaiterServiceViewController ()<UIBubbleTableViewDataSource, WlhyXMPPDelegate, FaceToolBarDelegate, CommentTrainViewDelegate, UIActionSheetDelegate>
+@interface WlhyWaiterServiceViewController ()<UIBubbleTableViewDataSource, WlhyXMPPDelegate, FaceToolBarDelegate, CommentTrainViewDelegate, UIActionSheetDelegate, IFlySpeechRecognizerDelegate>
 {
     BOOL isMessageSended;
     BOOL isMessageRecieved;
@@ -25,12 +26,15 @@
 
 @property (strong, nonatomic) IBOutlet UIBubbleTableView *chatView;
 
+@property(strong, nonatomic) IFlySpeechRecognizer *iFlySpeechRecognizer;
+
 @property(strong, nonatomic) NSMutableArray *chartDataSource;
 @property(strong, nonatomic) WlhyXMPP *wlhyXmpp;
 @property(strong, nonatomic) NSString *waiterAccount;
 @property(strong, nonatomic) NSString *waiterServerName;
 @property(strong, nonatomic) NSString *hostName;
 @property(strong, nonatomic) NSString *hostPort;
+@property(strong, nonatomic) NSString *telNumber;
 @property(strong, nonatomic) FaceToolBar *inputBar;
 @property (strong, nonatomic) CommentTrainView *commentTrainView;
 
@@ -86,6 +90,13 @@
     if(!_chartDataSource){
         _chartDataSource = [NSMutableArray array];
     }
+    
+    //讯飞语音：：
+    NSString *initString = [NSString stringWithFormat:@"appid=%@,timeout=%i",iFlyAPPID,10000];
+    _iFlySpeechRecognizer = [IFlySpeechRecognizer createRecognizer:initString delegate:self];
+    [_iFlySpeechRecognizer setParameter:@"domain" value:@"sms"];
+    [_iFlySpeechRecognizer setParameter:@"sample_rate" value:@"16000"];
+    [_iFlySpeechRecognizer setParameter:@"plain_result" value:@"0"];
 }
 
 
@@ -133,12 +144,14 @@
     [super viewDidDisappear:animated];
 }
 
-- (void)viewDidUnload
+
+- (void)didReceiveMemoryWarning
 {
+    [super didReceiveMemoryWarning];
     
+    self.view = nil;
     self.chatView = nil;
     self.chartDataSource = nil;
-    self.wlhyXmpp = nil;
     self.waiterAccount = nil;
     self.waiterServerName = nil;
     self.hostName = nil;
@@ -149,14 +162,9 @@
     self.waiterStatusLabel = nil;
     self.waiterFromLabel = nil;
     self.waiterIntroLabel = nil;
-    
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.inputBar = nil;
+    self.telNumber = nil;
+    self.iFlySpeechRecognizer = nil;
 }
 
 - (void)back:(id)sender
@@ -205,13 +213,31 @@
             //获取前台信息成功：：
             
             /*
-             {"imUrl":"218.249.196.106","imPort":"5222","imServerName":"eayun-ef5e6c21c","userName":"前台接待","account":"qt_006","picture":"http://218.249.196.106:8080/bdcServer/img/ems.JPG","errorCode":0,"errorDesc":"获取前台接待人员信息成功"}
+             {
+             account = zkqtjd;
+             deptname = "\U6167\U52a8\U4ff1\U4e50\U90e8";
+             errorCode = 0;
+             errorDesc = "\U83b7\U53d6\U524d\U53f0\U63a5\U5f85\U4eba\U5458\U4fe1\U606f\U6210\U529f";
+             frontDeskId = 10004952;
+             imPort = 5222;
+             imServerName = "218.245.5.76";
+             imUrl = "218.245.5.76";
+             picture = "http://www.holddo.com:80/bdcServer/img/files/img/zkqtjd.png";
+             remark = "\U5065\U5eb7\U7ba1\U7406\U670d\U52a1\U7ecf\U9a8c\U4e30\U5bcc";
+             userName = "\U80e1\U4e9a\U6606";
+             userTel = 18701637235;
+             }---(null)
             */
             
             _waiterNameLabel.text = [info objectForKey:@"userName"];
             _waiterStatusLabel.text = @"在线";
             _waiterFromLabel.text = [info objectForKey:@"deptname"];
             _waiterIntroLabel.text = [info objectForKey:@"remark"];
+            
+            _telNumber = [info objectForKey:@"userTel"];
+            [_mobileTelButtton setTitle:_telNumber forState:UIControlStateNormal];
+            [_mobileTelButtton setTitle:_telNumber forState:UIControlStateHighlighted];
+            
             __block WlhyWaiterServiceViewController *this = self;
             NSString *picString = [info objectForKey:@"picture"];
             [_waiterImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:picString]] placeholderImage:[UIImage imageNamed:picString] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
@@ -245,6 +271,10 @@
             _waiterFromLabel.text = @"客户服务部";
             _waiterIntroLabel.text = @"可接受离线消息";
             [_waiterImageView setImage:[UIImage imageNamed:@"default_qt.png"]];
+            
+            _telNumber = @"010-67052922";
+            [_mobileTelButtton setTitle:_telNumber forState:UIControlStateNormal];
+            [_mobileTelButtton setTitle:_telNumber forState:UIControlStateHighlighted];
             
             _hostName = [info objectForKey:@"imUrl"];
             _hostPort = [info objectForKey:@"imPort"];
@@ -462,6 +492,16 @@
     [_wlhyXmpp sendMessage:inputText];
 }
 
+- (void)voiceButtonAction
+{
+    //开始语音识别：：
+    [self showText:@"开始说话"];
+    
+    [_iFlySpeechRecognizer startListening];
+}
+
+#pragma mark - commentView Delegate
+
 - (void)finishCommentList:(NSInteger)index content:(NSString *)contentString
 {
     /*
@@ -473,6 +513,9 @@
      servicetype     1：前台接待 2：私教
      */
     
+    if ([DBM dbm].currentUsers.memberId == NULL) {
+        return;
+    }
     
     [self sendRequest:
      
@@ -515,7 +558,7 @@
 {
     
     if (buttonIndex == 0) {
-        [self callPhone:@"010-67052922"];
+        [self callPhone:_telNumber];
     }
     
 }
@@ -532,5 +575,38 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:callTelString]];
 }
 
+
+#pragma mark - speech Delegate
+
+- (void) onVolumeChanged: (int)volume
+{
+    
+}
+- (void) onBeginOfSpeech
+{
+    [self showText:@"正在录音"];
+}
+- (void) onEndOfSpeech
+{
+    [_iFlySpeechRecognizer stopListening];
+}
+- (void) onError:(IFlySpeechError *) errorCode
+{
+    NSLog(@"error :: %@", errorCode.errorDesc);
+}
+- (void) onResults:(NSArray *) results
+{
+    [_iFlySpeechRecognizer stopListening];
+    NSMutableString *result = [[NSMutableString alloc] init];
+    NSDictionary *dic = [results objectAtIndex:0];
+    for (NSString *key in dic) {
+        [result appendFormat:@"%@",key];
+    }
+    [_inputBar setInputContent:result];
+}
+- (void) onCancel
+{
+    
+}
 
 @end

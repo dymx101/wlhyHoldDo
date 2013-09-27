@@ -22,6 +22,7 @@
 @protocol FaceToolBarDelegate <NSObject>
 
 -(void)sendTextAction:(NSString *)inputText;
+-(void)voiceButtonAction;
 
 @end
 
@@ -29,10 +30,10 @@
 
 @interface FaceToolBar : UIToolbar <facialViewDelegate,UIExpandingTextViewDelegate,UIScrollViewDelegate>
 
-@property(nonatomic,strong)UIView *theSuperView;
+@property(nonatomic,strong) UIView *theSuperView;
 @property (weak) NSObject<FaceToolBarDelegate> *delegate;
 
-
+- (void)setInputContent:(NSString *)content;
 - (void)dismissKeyBoard;
 - (id)initWithFrame:(CGRect)frame superView:(UIView *)superView;
 

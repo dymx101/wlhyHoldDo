@@ -121,9 +121,12 @@
     
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [self setLauncherView:nil];
+    [super didReceiveMemoryWarning];
+    
+    self.view = nil;
+    self.launcherView = nil;
     self.launcherViewController = nil;
     self.goalLabel = nil;
     self.paramLabel = nil;
@@ -134,14 +137,6 @@
     self.integralLabel = nil;
     self.weatherButton = nil;
     self.backgroundImageView = nil;
-    
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)dealloc
@@ -176,10 +171,6 @@
                                        self.view.frame.size.width - 10, 200)];
     [self.view addSubview:_launcherView];
     [self addSubViewController:_launcherViewController toView:self.launcherView];
-    
-    
-    
-    //   [self setLauncherItems];
     
     WlhyHomeTitleViewController *homeTitleViewController = self.homeTitleViewController;
     [self.view addSubview: homeTitleViewController.view];

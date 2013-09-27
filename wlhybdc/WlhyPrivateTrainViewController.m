@@ -562,6 +562,12 @@
     [_wlhyXmpp sendMessage:inputText];
 }
 
+- (void)voiceButtonAction
+{
+    return;
+}
+
+#pragma mark - CommentView Delegate
 
 - (void)finishCommentList:(NSInteger)index content:(NSString *)contentString
 {

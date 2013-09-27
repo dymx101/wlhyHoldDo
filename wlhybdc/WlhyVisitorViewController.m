@@ -64,6 +64,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     self.navigationController.navigationBar.hidden = NO;
+    [_readerView stop];
     
     [super viewWillDisappear:animated];
 }

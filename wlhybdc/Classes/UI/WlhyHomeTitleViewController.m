@@ -56,14 +56,13 @@ typedef enum {
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    self.view = nil;
+    self.totalTimeLabel = nil;
+    self.totalEnergyLabel = nil;
+    self.dropDownButton = nil;
 }
 
-- (void)viewDidUnload
-{
-    [self setDropDownButton:nil];
-    [super viewDidUnload];
-}
 
 #pragma mark - UI
 

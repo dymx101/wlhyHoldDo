@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Prescription" representedClassName="Prescription" syncable="YES">
+        <attribute name="exerciseGoals" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exerciseProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendTips" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memberId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="plannedGoal" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="prescriptionId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tips" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="apkUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="autologin" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="clearPwd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ftpAccount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ftpIp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ftpPwd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imPort" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="imServerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastlogin" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="memberId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" minValueString="11" maxValueString="11" syncable="YES"/>
+        <attribute name="pwd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="String" syncable="YES"/>
+        <fetchedProperty name="fetchedLastLoginUser" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Users"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="UsersExt" representedClassName="UsersExt" syncable="YES">
+        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bmi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deptid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deptName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hdi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="iemi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="integral" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isModifyBaseInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isModifyWHSInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isVip" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jsmd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="manifesto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memberId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="memberStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone_new" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pwd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pwd_new" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceAccount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="servicePersonId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="serviceStar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceuserType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sportEquips" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sportItems" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sportPeriods" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sportTimes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="statusDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalDistance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalEnergy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vitality" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="waist" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="UserSport" representedClassName="UserSport" syncable="YES">
+        <attribute name="continueTime" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="finish" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="memberId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="segment" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Prescription" positionX="160" positionY="237" width="128" height="150"/>
+        <element name="Users" positionX="322" positionY="304" width="128" height="299"/>
+        <element name="UsersExt" positionX="-38" positionY="494" width="128" height="720"/>
+        <element name="UserSport" positionX="-36" positionY="192" width="128" height="150"/>
+    </elements>
+</model>

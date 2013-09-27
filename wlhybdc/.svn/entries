@@ -1,0 +1,1148 @@
+10
+
+dir
+0
+svn://218.245.5.78/code/ios/%E5%BD%92%E6%A1%A3/wlhybdc
+svn://218.245.5.78
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+d42514f0-f95f-4ef1-a9c5-a7944b17aa57
+
+WlhyHoldDoStoreViewController.h
+file
+
+
+
+add
+
+WlhyModifyPhoneViewController.m
+file
+
+
+
+add
+
+WlhyHoldDoStoreViewController.m
+file
+
+
+
+add
+
+WlhyWeekPrescriptionViewController.h
+file
+
+
+
+add
+
+WlhyServiceClauseViewController.h
+file
+
+
+
+add
+
+Users.h
+file
+
+
+
+add
+
+head_f.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyWeekPrescriptionViewController.m
+file
+
+
+
+add
+
+WlhyServiceClauseViewController.m
+file
+
+
+
+add
+
+WlhyBuyEquipViewController.h
+file
+
+
+
+add
+
+Users.m
+file
+
+
+
+add
+
+WlhyPrivateTrainViewController.h
+file
+
+
+
+add
+
+WlhyBuyEquipViewController.m
+file
+
+
+
+add
+
+WlhyModifyHistoryViewController.h
+file
+
+
+
+add
+
+WlhyFitnessHallViewController.h
+file
+
+
+
+add
+
+WlhyNearMemberViewController.h
+file
+
+
+
+add
+
+WlhyPrivateTrainViewController.m
+file
+
+
+
+add
+
+WlhyModifyHistoryViewController.m
+file
+
+
+
+add
+
+WlhyFitnessHallViewController.m
+file
+
+
+
+add
+
+WlhyNearMemberViewController.m
+file
+
+
+
+add
+
+default_qt.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+Button Image
+dir
+
+
+
+add
+
+WlhyStrengthSportViewController.h
+file
+
+
+
+add
+
+WlhyNearStationViewController.h
+file
+
+
+
+add
+
+WlhyStrengthSportViewController.m
+file
+
+
+
+add
+
+WlhyNearStationViewController.m
+file
+
+
+
+add
+
+en.lproj
+dir
+
+
+
+add
+
+WlhyFieldInfoViewController.h
+file
+
+
+
+add
+
+WlhyNoRunPrescriptionViewController.h
+file
+
+
+
+add
+
+WlhyFieldInfoViewController.m
+file
+
+
+
+add
+
+WlhyAccountInfoViewController.h
+file
+
+
+
+add
+
+WlhyNoRunPrescriptionViewController.m
+file
+
+
+
+add
+
+WlhyFitnessTipsViewController.h
+file
+
+
+
+add
+
+Images
+dir
+
+
+
+add
+
+WlhyAccountInfoViewController.m
+file
+
+
+
+add
+
+WlhyFitnessTipsViewController.m
+file
+
+
+
+add
+
+Launcher Icon
+dir
+
+
+
+add
+
+LocalFiles
+dir
+
+
+
+add
+
+WlhyScanInstructionViewController.h
+file
+
+
+
+add
+
+WlhyTrainInfoViewController.h
+file
+
+
+
+add
+
+WlhyRegistSucceedViewController.h
+file
+
+
+
+add
+
+WlhyScanInstructionViewController.m
+file
+
+
+
+add
+
+ZBar Images
+dir
+
+
+
+add
+
+WlhyTrainInfoViewController.m
+file
+
+
+
+add
+
+WlhyRegistSucceedViewController.m
+file
+
+
+
+add
+
+UIImage+ScaleToSize.h
+file
+
+
+
+add
+
+WlhyZBarViewController.h
+file
+
+
+
+add
+
+WlhyBikeSportViewController.h
+file
+
+
+
+add
+
+UIImage+ScaleToSize.m
+file
+
+
+
+add
+
+WlhyZBarViewController.m
+file
+
+
+
+add
+
+line3.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyRunPrescriptionViewController.h
+file
+
+
+
+add
+
+wlhybdc-Prefix.pch
+file
+
+
+
+add
+
+WlhyBikeSportViewController.m
+file
+
+
+
+add
+
+WlhyPrescriptionEvaluateViewController.h
+file
+
+
+
+add
+
+WlhyTyjPrescriptionViewController.h
+file
+
+
+
+add
+
+WlhyRunPrescriptionViewController.m
+file
+
+
+
+add
+
+top_switcher_expanded.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyBikePrescriptionViewController.h
+file
+
+
+
+add
+
+WlhyTyjPrescriptionViewController.m
+file
+
+
+
+add
+
+WlhyPrescriptionEvaluateViewController.m
+file
+
+
+
+add
+
+wlhybdc.entitlements
+file
+
+
+
+add
+
+WlhyBikePrescriptionViewController.m
+file
+
+
+
+add
+
+wlhy.xcdatamodeld
+dir
+
+
+
+add
+
+top_switcher_expanded_focused.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyXMPP.h
+file
+
+
+
+add
+
+FileManage.h
+file
+
+
+
+add
+
+WlhyMyEquipViewController.h
+file
+
+
+
+add
+
+FileManage.m
+file
+
+
+
+add
+
+WlhyXMPP.m
+file
+
+
+
+add
+
+WlhyMyEquipViewController.m
+file
+
+
+
+add
+
+WlhyEquipInfoViewController.h
+file
+
+
+
+add
+
+WlhyFitnessClassViewController.h
+file
+
+
+
+add
+
+WlhyBodyKPIViewController.h
+file
+
+
+
+add
+
+WlhyEquipInfoViewController.m
+file
+
+
+
+add
+
+wcfman.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyFitnessClassViewController.m
+file
+
+
+
+add
+
+WlhyBodyKPIViewController.m
+file
+
+
+
+add
+
+AppDelegate.h
+file
+
+
+
+add
+
+Hall Images
+dir
+
+
+
+add
+
+AppDelegate.m
+file
+
+
+
+add
+
+WlhyGrantEquipViewController.h
+file
+
+
+
+add
+
+UsersExt.h
+file
+
+
+
+add
+
+UsersExt.m
+file
+
+
+
+add
+
+top_switcher_expanded_selected.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyGrantEquipViewController.m
+file
+
+
+
+add
+
+main.m
+file
+
+
+
+add
+
+head_sj.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyRechargeErrorViewController.h
+file
+
+
+
+add
+
+jrcf Image
+dir
+
+
+
+add
+
+WlhyRechargeErrorViewController.m
+file
+
+
+
+add
+
+WlhyAboutHoldDoViewController.h
+file
+
+
+
+add
+
+Classes
+dir
+
+
+
+add
+
+head_m.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyAboutHoldDoViewController.m
+file
+
+
+
+add
+
+WlhyMessageReminderViewController.h
+file
+
+
+
+add
+
+WlhyMessageReminderViewController.m
+file
+
+
+
+add
+
+WlhyNewSportViewController.h
+file
+
+
+
+add
+
+WlhyNewSportViewController.m
+file
+
+
+
+add
+
+iTunesArtwork
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyNoStrengthPrescriptionViewController.h
+file
+
+
+
+add
+
+WlhyStrengthPrescriptionViewController.h
+file
+
+
+
+add
+
+WlhyNoStrengthPrescriptionViewController.m
+file
+
+
+
+add
+
+top_switcher_collapsed_selected.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyStrengthPrescriptionViewController.m
+file
+
+
+
+add
+
+WlhyNoTrainViewController.h
+file
+
+
+
+add
+
+WlhyNoTrainViewController.m
+file
+
+
+
+add
+
+WlhyChangeTrainViewController.h
+file
+
+
+
+add
+
+WlhyManifestoViewController.h
+file
+
+
+
+add
+
+WlhyCommonPrescViewController.h
+file
+
+
+
+add
+
+WlhyRechargeScanViewController.h
+file
+
+
+
+add
+
+wlhybdc-Info.plist
+file
+
+
+
+add
+
+WlhyChangeTrainViewController.m
+file
+
+
+
+add
+
+WlhyRechargeScanViewController.m
+file
+
+
+
+add
+
+WlhyCommonPrescViewController.m
+file
+
+
+
+add
+
+top_switcher_collapsed.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyManifestoViewController.m
+file
+
+
+
+add
+
+WlhyTyjSportViewController.h
+file
+
+
+
+add
+
+WlhyVisitorViewController.h
+file
+
+
+
+add
+
+WlhyWeatherViewController.h
+file
+
+
+
+add
+
+WlhyTrainDetailViewController.h
+file
+
+
+
+add
+
+Icon Image
+dir
+
+
+
+add
+
+top_switcher_collapsed_focused.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhyTyjSportViewController.m
+file
+
+
+
+add
+
+zh-Hans.lproj
+dir
+
+
+
+add
+
+WlhyWeatherViewController.m
+file
+
+
+
+add
+
+WlhyVisitorViewController.m
+file
+
+
+
+add
+
+WlhyTrainDetailViewController.m
+file
+
+
+
+add
+
+WlhyRepairsEquipViewController.h
+file
+
+
+
+add
+
+WlhyNoBikePrescriptionViewController.h
+file
+
+
+
+add
+
+WlhyWaiterServiceViewController.h
+file
+
+
+
+add
+
+WlhyNoBikePrescriptionViewController.m
+file
+
+
+
+add
+
+WlhyRepairsEquipViewController.m
+file
+
+
+
+add
+
+WlhyFitnessGoalViewController.h
+file
+
+
+
+add
+
+WlhyWaiterServiceViewController.m
+file
+
+
+
+add
+
+sounds
+dir
+
+
+
+add
+
+WlhyFitnessGoalViewController.m
+file
+
+
+
+add
+
+WlhyStationInfoViewController.h
+file
+
+
+
+add
+
+WlhyStationInfoViewController.m
+file
+
+
+
+add
+
+WlhyEvaluateEquipViewController.h
+file
+
+
+
+add
+
+head_pro.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+WlhySportHabitViewController.h
+file
+
+
+
+add
+
+WlhyEvaluateEquipViewController.m
+file
+
+
+
+add
+
+WlhyModifyPhoneViewController.h
+file
+
+
+
+add
+
+Alert Image
+dir
+
+
+
+add
+
+WlhySportHabitViewController.m
+file
+
+
+
+add
+

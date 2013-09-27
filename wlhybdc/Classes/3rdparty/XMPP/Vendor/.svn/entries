@@ -1,0 +1,63 @@
+10
+
+dir
+0
+svn://218.245.5.78/code/ios/%E5%BD%92%E6%A1%A3/wlhybdc/Classes/3rdparty/XMPP/Vendor
+svn://218.245.5.78
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+d42514f0-f95f-4ef1-a9c5-a7944b17aa57
+
+facebook-ios-sdk
+dir
+
+
+
+add
+
+libidn
+dir
+
+
+
+add
+
+CocoaLumberjack
+dir
+
+
+
+add
+
+KissXML
+dir
+
+
+
+add
+
+CocoaAsyncSocket
+dir
+
+
+
+add
+

@@ -1,0 +1,105 @@
+10
+
+dir
+0
+svn://218.245.5.78/code/ios/%E5%BD%92%E6%A1%A3/wlhybdc/Classes/3rdparty/iflyMSC.framework/Headers
+svn://218.245.5.78
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+d42514f0-f95f-4ef1-a9c5-a7944b17aa57
+
+IFlyDataUploader.h
+file
+
+
+
+add
+
+IFlySpeechUser.h
+file
+
+
+
+add
+
+IFlyDataDownloader.h
+file
+
+
+
+add
+
+IFlySpeechRecognizerDelegate.h
+file
+
+
+
+add
+
+IFlySpeechSynthesizerDelegate.h
+file
+
+
+
+add
+
+IFlyContact.h
+file
+
+
+
+add
+
+IFlySetting.h
+file
+
+
+
+add
+
+IFlyUserWords.h
+file
+
+
+
+add
+
+IFlySpeechRecognizer.h
+file
+
+
+
+add
+
+IFlySpeechSynthesizer.h
+file
+
+
+
+add
+
+IFlySpeechError.h
+file
+
+
+
+add
+

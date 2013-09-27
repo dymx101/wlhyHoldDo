@@ -1,0 +1,175 @@
+10
+
+dir
+0
+svn://218.245.5.78/code/ios/%E5%BD%92%E6%A1%A3/wlhybdc/Classes/3rdparty/AFNetworking
+svn://218.245.5.78
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+d42514f0-f95f-4ef1-a9c5-a7944b17aa57
+
+AFHTTPClient.m
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+AFNetworking.h
+file
+
+
+
+add
+
+AFXMLRequestOperation.h
+file
+
+
+
+add
+
+AFNetworkActivityIndicatorManager.h
+file
+
+
+
+add
+
+UIImageView+AFNetworking.h
+file
+
+
+
+add
+
+AFXMLRequestOperation.m
+file
+
+
+
+add
+
+AFURLConnectionOperation.h
+file
+
+
+
+add
+
+AFNetworkActivityIndicatorManager.m
+file
+
+
+
+add
+
+AFJSONRequestOperation.h
+file
+
+
+
+add
+
+UIImageView+AFNetworking.m
+file
+
+
+
+add
+
+AFURLConnectionOperation.m
+file
+
+
+
+add
+
+AFJSONRequestOperation.m
+file
+
+
+
+add
+
+AFHTTPRequestOperation.h
+file
+
+
+
+add
+
+AFPropertyListRequestOperation.h
+file
+
+
+
+add
+
+AFImageRequestOperation.h
+file
+
+
+
+add
+
+AFHTTPRequestOperation.m
+file
+
+
+
+add
+
+AFHTTPClient.h
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+AFPropertyListRequestOperation.m
+file
+
+
+
+add
+
+AFImageRequestOperation.m
+file
+
+
+
+add
+

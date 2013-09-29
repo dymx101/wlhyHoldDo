@@ -100,7 +100,7 @@
     if (_rechargeVCPurpose == RechargeVCPurposeChangeTrain || _rechargeVCPurpose == RechargeVCPurposeSportGuide) {
         //无需扫描二维码，直接请求私教列表：：
         
-        if (_trainArray.count > 0) {
+        if (_trainArray) {
             return;
         }
         
@@ -115,7 +115,7 @@
     } else if (_rechargeVCPurpose == RechargeVCPurposeRecharge) {
         //二维码扫描：：
         
-        if (_trainArray.count > 0) {
+        if (_trainArray) {
             return;
         }
         
@@ -127,17 +127,14 @@
     }
 }
 
-- (void)viewDidUnload
-{
-    self.trainArray = nil;
-    
-    [super viewDidUnload];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.trainArray = nil;
 }
 
 - (void)back:(id)sender
@@ -393,7 +390,8 @@
     cell.trainIntroductionLabel.text = [trainInfo objectForKey:@"introduction"];
     cell.trainWorkTimeLabel.text = [trainInfo objectForKey:@"worktime"];
     cell.trainStatusLabel.text = ([[trainInfo objectForKey:@"isonline"] integerValue] == 1) ? @"在线" : @"离线";
-    if ([[trainInfo objectForKey:@"isonline"] integerValue] == 1) {
+    cell.trainStatusLabel.textColor = [UIColor darkGrayColor];
+    if ([[trainInfo objectForKey:@"isonline"] integerValue] != 1) {
         cell.trainStatusLabel.textColor = [UIColor colorWithRed:0.9 green:0.4 blue:0.4 alpha:1.0];
     }
     

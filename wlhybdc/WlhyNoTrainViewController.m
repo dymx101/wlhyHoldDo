@@ -58,7 +58,14 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.descLabel = nil;
+    self.introTextView = nil;
+    
+    self.desc = nil;
 }
 
 - (void)back:(id)sender

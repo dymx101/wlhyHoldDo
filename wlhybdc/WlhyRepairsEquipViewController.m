@@ -89,7 +89,9 @@
 {
     [super didReceiveMemoryWarning];
     
-    self.view = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.wlhyTextDelegate = nil;
     self.nameArray = nil;
     self.imagePickerVC = nil;

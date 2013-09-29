@@ -120,7 +120,12 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.currentCardArray = nil;
+    self.historyCardArray = nil;
 }
 
 #pragma mark - VC Change

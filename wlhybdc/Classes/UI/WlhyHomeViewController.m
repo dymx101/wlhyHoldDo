@@ -125,7 +125,10 @@
 {
     [super didReceiveMemoryWarning];
     
-    self.view = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    
     self.launcherView = nil;
     self.launcherViewController = nil;
     self.goalLabel = nil;
@@ -137,6 +140,8 @@
     self.integralLabel = nil;
     self.weatherButton = nil;
     self.backgroundImageView = nil;
+    
+    self.wlhyXmpp = nil;
 }
 
 -(void)dealloc
@@ -157,19 +162,20 @@
 
 - (void)setUI
 {
-    
+    if (!_launcherView) {
+        _launcherView = [[UIView alloc] initWithFrame:CGRectMake(5, self.view.frame.size.height - 205,
+                                                                self.view.frame.size.width - 10, 200)];
+    }
     self.launcherView.layer.cornerRadius = 8;
     self.launcherView.layer.borderWidth = 1;
     self.launcherView.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.12].CGColor;
     self.launcherView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.75];
+    [self.view addSubview:_launcherView];
     
     if (!_launcherViewController) {
         _launcherViewController = [[WlhyLauncherViewController alloc] init];
     }
     
-    [_launcherView setFrame:CGRectMake(5, self.view.frame.size.height - 205,
-                                       self.view.frame.size.width - 10, 200)];
-    [self.view addSubview:_launcherView];
     [self addSubViewController:_launcherViewController toView:self.launcherView];
     
     WlhyHomeTitleViewController *homeTitleViewController = self.homeTitleViewController;
@@ -311,6 +317,10 @@
 
 - (UIView *)getTitleView
 {
+    if (!_titleView) {
+        _titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    }
+    
     //问候：：
     _greetLabel.text = @"";
     NSDateComponents *dc = [[NSCalendar currentCalendar] components:NSHourCalendarUnit fromDate:[NSDate date]];

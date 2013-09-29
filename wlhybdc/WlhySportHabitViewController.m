@@ -71,23 +71,17 @@
     [self setUI];
 }
 
-- (void)viewDidUnload
-{
-    [self setSportTimesSegment:nil];
-    [self setSportPeriodsView:nil];
-    [self setSportItemsView:nil];
-    
-    [super viewDidUnload];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     
-    self.view = nil;
-    [self setSportTimesSegment:nil];
-    [self setSportPeriodsView:nil];
-    [self setSportItemsView:nil];
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.sportTimesSegment = nil;
+    self.sportPeriodsView = nil;
+    self.sportItemsView = nil;
+    self.isForMakeUpInfo = nil;
 }
 
 #pragma mark - Private Methond

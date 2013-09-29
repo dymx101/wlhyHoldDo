@@ -140,8 +140,16 @@
     [super viewWillDisappear:animated];
 }
 
-- (void)viewDidUnload
-{    
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.inputBar.delegate = nil;
+    
     self.chartDataSource = nil;
     self.trainInfo = nil;
     self.trainAccount = nil;
@@ -158,14 +166,6 @@
     self.trainWorkTimeLabel = nil;
     self.commentTrainView = nil;
     self.mobileTelButtton = nil;
-    
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)back:(id)sender
@@ -332,6 +332,7 @@
     }
     [_wlhyXmpp connect];
     [_wlhyXmpp setDelegate:self];
+    NSLog(@"%@ , %@", _trainAccount, _trainServerName);
     [_wlhyXmpp setMate:_trainAccount serverName:_trainServerName];
     
     NSMutableDictionary *messageDataBase;
@@ -557,7 +558,6 @@
 
 -(void)sendTextAction:(NSString *)inputText
 {
-    
     //发送消息
     [_wlhyXmpp sendMessage:inputText];
 }

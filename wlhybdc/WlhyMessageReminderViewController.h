@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WlhyMessageReminderViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface WlhyMessageReminderViewController : UITableViewController
 
 @end

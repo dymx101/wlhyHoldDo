@@ -101,20 +101,18 @@
     }
 }
 
-- (void)viewDidUnload
-{
-    self.currentNameLabel = nil;
-    self.goalNameLabel = nil;
-    self.inputTextView = nil;
-    self.changeDic = nil;
-    
-    [super viewDidUnload];
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.currentNameLabel = nil;
+    self.goalNameLabel = nil;
+    self.inputTextView = nil;
+
 }
 
 - (void)back:(id)sender

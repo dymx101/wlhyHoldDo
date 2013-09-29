@@ -53,7 +53,21 @@
     [super viewDidLoad];
 
     self.title = @"健身信息统计";
+    
+    //自定义返回：：
+    self.navigationItem.hidesBackButton = YES;
+    
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backButton setContentMode:UIViewContentModeScaleToFill];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back_1.png"] forState:UIControlStateHighlighted];
+    [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    backButton.frame = CGRectMake(0, 0, 62, 40);
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem = backItem;
 }
+
+
 
 
 -(void)viewDidAppear:(BOOL)animated
@@ -69,18 +83,39 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidUnload
-{
-
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     [self setTotalTimeLabel:nil];
     [self setTotalDistanceLabel:nil];
     [self setAvgSpeedLabel:nil];
     [self setShowDateLabel:nil];
     [self setDateSpanSegment:nil];
-    [super viewDidUnload];
+}
+
+- (void)back:(id)sneder
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)handlerLocalEquipTypeData:(EquipType)kEquipType
+{
+    /* 1001 跑步机 1002 单车 1003 力量训练器 1004 血压计 1005 体重秤 1006 椭圆机*/
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *equipTypeKey = [NSString stringWithFormat:@"%@+equipTypeScanned",
+                              [DBM dbm].currentUsers.memberId];
+    NSMutableArray *equipTypeScanned = [NSMutableArray arrayWithArray:[userDefaults arrayForKey:equipTypeKey]];
+    
+    NSNumber *equipTypeNumber = [NSNumber numberWithInt:kEquipType];
+    if (![equipTypeScanned containsObject:equipTypeNumber]) {
+        [equipTypeScanned addObject:equipTypeNumber];
+    }
+    
+    [userDefaults setObject:equipTypeScanned forKey:equipTypeKey];
+    [userDefaults synchronize];
+    
 }
 
 #pragma mark - IBAction 

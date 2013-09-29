@@ -54,9 +54,31 @@ static WlhyXMPP* _WlhyXMPP = nil;
     }
 }
 
-- (void)forceConnect
+- (void)connectWithHostname:(NSString *)kHostName hostPort:(NSString *)kHostPort servername:(NSString *)kServerName
 {
     
+    if(!_xmppStream){
+        _xmppStream = [[XMPPStream alloc] init];
+        [_xmppStream addDelegate:self delegateQueue:dispatch_get_current_queue()];
+    }
+    _xmppStream.enableBackgroundingOnSocket = YES;
+    
+    if (![_xmppStream isDisconnected]) {
+        return;
+    }
+    
+    _myJID = [NSString stringWithFormat:@"%@@%@", @"", kServerName];
+    [_xmppStream setHostName: kHostName];
+    [_xmppStream setHostPort: [kHostPort integerValue]];
+    [_xmppStream setMyJID:[XMPPJID jidWithString:_myJID]];
+    
+    NSLog(@"%@ , %i", _xmppStream.hostName, _xmppStream.hostPort);
+    
+    NSError * error=nil;
+    [_xmppStream connect:&error];
+    if(error){
+        Alert(error.description);
+    }
 }
 
 - (void)setMateToMyTrain
@@ -140,6 +162,8 @@ static WlhyXMPP* _WlhyXMPP = nil;
 
 - (void)xmppStreamDidConnect:(XMPPStream *)sender
 {
+    NSLog(@"xmppStreamDidConnect");
+    
     NSError * error = nil;
     
     [_delegate XMPPDidConnected];
@@ -149,6 +173,16 @@ static WlhyXMPP* _WlhyXMPP = nil;
     } else {
         [_xmppStream authenticateAnonymously:&error];
     }
+}
+
+- (void)xmppStreamDidRegister:(XMPPStream *)sender
+{
+    NSLog(@"xmppStreamDidRegister");
+}
+
+- (void)xmppStream:(XMPPStream *)sender didNotRegister:(NSXMLElement *)error
+{
+    NSLog(@"didNotRegister");
 }
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender

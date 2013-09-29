@@ -39,17 +39,15 @@
     _contentTextView.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5].CGColor;
 }
 
-- (void)viewDidUnload
-{
-    self.contentTextView = nil;
-    
-    [super viewDidUnload];
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.contentTextView = nil;
 }
 
 - (IBAction)agreeTapped:(id)sender

@@ -16,7 +16,6 @@
 }
 
 
-@property(strong, nonatomic) UIExpandingTextView *textView;//文本输入框
 @property(strong, nonatomic) UIButton *faceButton ;
 @property(strong, nonatomic) UIButton *voiceButton;
 @property(strong, nonatomic) UIButton *sendButton;
@@ -147,10 +146,6 @@
     return self;
 }
 
-- (void)setInputContent:(NSString *)content
-{
-    textView.text = content;
-}
 
 #pragma mark - scrollViewDelegate
 

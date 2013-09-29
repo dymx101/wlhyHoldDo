@@ -60,9 +60,7 @@
 
 - (void)viewDidUnload
 {
-    self.desc = nil;
-    self.destLabel = nil;
-    self.introTextView = nil;
+    
     
     [super viewDidUnload];
 }
@@ -71,7 +69,12 @@
 {
     
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.destLabel = nil;
+    self.introTextView = nil;
 }
 
 - (void)back:(id)sender

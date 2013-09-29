@@ -14,7 +14,7 @@
 //@"http://218.245.5.79:80"
 //@"http://192.168.1.80:8080" 战
 
-NSString* const wlServer = @"http://192.168.1.80:8080";
+NSString* const wlServer = @"http://218.245.5.79:80";
 NSString* const brmServer = @"http://218.245.5.78:80";
 
 NSString* const wlvCode= @"/bdcServer/services/register/registerGetVcodeRequest";

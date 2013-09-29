@@ -92,7 +92,9 @@
 {
     [super didReceiveMemoryWarning];
     
-    self.view = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.heightLabel = nil;
     self.weightLabel = nil;
     self.waistLabel = nil;

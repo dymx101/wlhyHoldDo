@@ -65,25 +65,43 @@
     [self presentModalViewController:destVC animated:YES];
 }
 
-- (void)viewDidUnload
-{
-    self.readerVC = nil;
-    self.prescInfo = nil;
-    self.barDecodeString = nil;
-    
-    [super viewDidUnload];
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.readerVC = nil;
+    self.prescInfo = nil;
+    self.barDecodeString = nil;
+}
+
+- (void)handlerLocalEquipTypeData:(EquipType)kEquipType
+{
+    /* 1001 跑步机 1002 单车 1003 力量训练器 1004 血压计 1005 体重秤 1006 椭圆机*/
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *equipTypeKey = [NSString stringWithFormat:@"%@+equipTypeScanned",
+                          [DBM dbm].currentUsers.memberId];
+    NSMutableArray *equipTypeScanned = [NSMutableArray arrayWithArray:[userDefaults arrayForKey:equipTypeKey]];
+    
+    NSNumber *equipTypeNumber = [NSNumber numberWithInt:kEquipType];
+    if (![equipTypeScanned containsObject:equipTypeNumber]) {
+        [equipTypeScanned addObject:equipTypeNumber];
+    }
+    
+    [userDefaults setObject:equipTypeScanned forKey:equipTypeKey];
+    [userDefaults synchronize];
+
 }
 
 #pragma mark - ZBar Delegate
 
 - (void)finishGetBarCode:(NSString *)barString
 {
+    
     _barDecodeString = barString;
     if ([_barDecodeString hasPrefix:@"DECODE:"]) {
         _barDecodeString = [_barDecodeString substringWithRange:NSMakeRange(7, 16)];   //0001000000290001
@@ -122,9 +140,14 @@
     NSLog(@"action :: %@", action);
     NSLog(@"%@,-----,%@",info,error);
     
-    if(!error){
+    if(info){
         
-        equipType = [[_prescInfo objectForKey:@"equipType"] integerValue];
+        equipType = [[info objectForKey:@"equipType"] intValue];
+        
+        [self handlerLocalEquipTypeData:equipType];
+        
+        
+        NSLog(@"equipType :: %i", equipType);
         
         if([[info objectForKey:@"errorCode"] integerValue] == 0){
             
@@ -134,7 +157,6 @@
             } else {
                 //有处方：：
                 _prescInfo = info;
-                equipType = [[_prescInfo objectForKey:@"equipType"] integerValue];
                 
                 //保存处方到本地：：
                 [self handlerLocalPresc];

@@ -69,18 +69,17 @@
     [super viewWillDisappear:animated];
 }
 
-- (void)viewDidUnload
-{
-    self.readerView = nil;
-    self.barDecode = nil;
-    
-    [super viewDidUnload];
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    
+    self.readerView = nil;
+    self.barDecode = nil;
 }
 
 #pragma mark - ZBarReaderView delegate

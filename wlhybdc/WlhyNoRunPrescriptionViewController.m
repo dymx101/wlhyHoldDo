@@ -66,20 +66,18 @@
     _introTextView.text = @"（1）科学有效，安全保障\n（2）个性化量身定制\n（3）持续动态优化\n（4）较少时间可获得较高健康效益";
 }
 
-- (void)viewDidUnload
-{
-    self.descLabel = nil;
-    self.introTextView = nil;
-    self.desc = nil;
-    self.commonPrescView = nil;
-    
-    [super viewDidUnload];
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.descLabel = nil;
+    self.introTextView = nil;
+    self.desc = nil;
+    self.commonPrescView = nil;
 }
 
 

@@ -77,9 +77,13 @@
 
 - (void)didReceiveMemoryWarning
 {
+    [super didReceiveMemoryWarning];
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.manifestoTextView = nil;
     
-    [super didReceiveMemoryWarning];
 }
 
 - (void)rightItemTouched:(id)sender

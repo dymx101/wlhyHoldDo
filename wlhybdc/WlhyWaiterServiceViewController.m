@@ -35,6 +35,7 @@
 @property(strong, nonatomic) NSString *hostName;
 @property(strong, nonatomic) NSString *hostPort;
 @property(strong, nonatomic) NSString *telNumber;
+@property(strong, nonatomic) NSString *frontDeskId;
 @property(strong, nonatomic) FaceToolBar *inputBar;
 @property (strong, nonatomic) CommentTrainView *commentTrainView;
 
@@ -42,7 +43,7 @@
 @property(strong, nonatomic) IBOutlet UILabel *waiterNameLabel;
 @property(strong, nonatomic) IBOutlet UIImageView *waiterImageView;
 @property(strong, nonatomic) IBOutlet UILabel *waiterStatusLabel;
-@property (strong, nonatomic) IBOutlet UIButton *mobileTelButtton;
+@property(strong, nonatomic) IBOutlet UIButton *mobileTelButtton;
 @property(strong, nonatomic) IBOutlet UILabel *waiterFromLabel;
 @property(strong, nonatomic) IBOutlet UILabel *waiterIntroLabel;
 
@@ -94,6 +95,7 @@
     //讯飞语音：：
     NSString *initString = [NSString stringWithFormat:@"appid=%@,timeout=%i",iFlyAPPID,10000];
     _iFlySpeechRecognizer = [IFlySpeechRecognizer createRecognizer:initString delegate:self];
+    _iFlySpeechRecognizer.delegate = self;
     [_iFlySpeechRecognizer setParameter:@"domain" value:@"sms"];
     [_iFlySpeechRecognizer setParameter:@"sample_rate" value:@"16000"];
     [_iFlySpeechRecognizer setParameter:@"plain_result" value:@"0"];
@@ -141,6 +143,10 @@
 {
     _wlhyXmpp.delegate = nil;
     
+    if (_isFromVisitorVC) {
+        [_wlhyXmpp disconnect];
+    }
+    
     [super viewDidDisappear:animated];
 }
 
@@ -149,7 +155,9 @@
 {
     [super didReceiveMemoryWarning];
     
-    self.view = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.chatView = nil;
     self.chartDataSource = nil;
     self.waiterAccount = nil;
@@ -164,7 +172,11 @@
     self.waiterIntroLabel = nil;
     self.inputBar = nil;
     self.telNumber = nil;
+    self.frontDeskId = nil;
+    
+    self.iFlySpeechRecognizer.delegate = nil;
     self.iFlySpeechRecognizer = nil;
+    
 }
 
 - (void)back:(id)sender
@@ -207,86 +219,100 @@
     NSLog(@"action :: %@", action);
     NSLog(@"%@---%@",info,error);
     
-    if(info) {
-        if([[info objectForKey:@"errorCode"] integerValue] == 0) {
+    if ([action isEqualToString:wlGetFrontDeskInfo]) {
+        if(info) {
+            if([[info objectForKey:@"errorCode"] integerValue] == 0) {
+                
+                //获取前台信息成功：：
+                
+                /*
+                 {
+                 account = zkqtjd;
+                 deptname = "\U6167\U52a8\U4ff1\U4e50\U90e8";
+                 errorCode = 0;
+                 errorDesc = "\U83b7\U53d6\U524d\U53f0\U63a5\U5f85\U4eba\U5458\U4fe1\U606f\U6210\U529f";
+                 frontDeskId = 10004952;
+                 imPort = 5222;
+                 imServerName = "218.245.5.76";
+                 imUrl = "218.245.5.76";
+                 picture = "http://www.holddo.com:80/bdcServer/img/files/img/zkqtjd.png";
+                 remark = "\U5065\U5eb7\U7ba1\U7406\U670d\U52a1\U7ecf\U9a8c\U4e30\U5bcc";
+                 userName = "\U80e1\U4e9a\U6606";
+                 userTel = 18701637235;
+                 }---(null)
+                 */
+                
+                _waiterNameLabel.text = [info objectForKey:@"userName"];
+                _waiterStatusLabel.text = @"在线";
+                _waiterFromLabel.text = [info objectForKey:@"deptname"];
+                _waiterIntroLabel.text = [info objectForKey:@"remark"];
+                
+                _telNumber = [info objectForKey:@"userTel"];
+                [_mobileTelButtton setTitle:_telNumber forState:UIControlStateNormal];
+                [_mobileTelButtton setTitle:_telNumber forState:UIControlStateHighlighted];
+                
+                __block WlhyWaiterServiceViewController *this = self;
+                NSString *picString = [info objectForKey:@"picture"];
+                [_waiterImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:picString]] placeholderImage:[UIImage imageNamed:picString] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                    [this.waiterImageView setImage:image];
+                } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                    [this.waiterImageView setImage:[UIImage imageNamed:@"default_qt.png"]];
+                }];
+                
+                
+                _hostName = [info objectForKey:@"imUrl"];
+                _hostPort = [info objectForKey:@"imPort"];
+                _waiterAccount = [info objectForKey:@"account"];
+                _waiterServerName = [info objectForKey:@"imServerName"];
+                
+            } else if([[info objectForKey:@"errorCode"] integerValue] == 2) {
+                //前台繁忙：：
+                
+                /*
+                 {
+                 errorCode = 2;
+                 errorDesc = "\U524d\U53f0\U63a5\U5f85\U5750\U5e2d\U5168\U5fd9,\U8bf7\U7a0d\U540e";
+                 imPort = 5222;
+                 imServerName = "218.245.5.76";
+                 imUrl = "218.245.5.76";
+                 }---(null)
+                 */
+                
+                _waiterNameLabel.text = @"前台服务";
+                _waiterStatusLabel.text = @"离线";
+                _waiterStatusLabel.textColor = [UIColor colorWithRed:0.9 green:0.4 blue:0.4 alpha:1.0];
+                _waiterFromLabel.text = @"客户服务部";
+                _waiterIntroLabel.text = @"可接受离线消息";
+                [_waiterImageView setImage:[UIImage imageNamed:@"default_qt.png"]];
+                
+                _telNumber = @"010-67052922";
+                [_mobileTelButtton setTitle:_telNumber forState:UIControlStateNormal];
+                [_mobileTelButtton setTitle:_telNumber forState:UIControlStateHighlighted];
+                
+                _hostName = [info objectForKey:@"imUrl"];
+                _hostPort = [info objectForKey:@"imPort"];
+                _waiterAccount = [info objectForKey:@"account"];
+                _waiterServerName = [info objectForKey:@"imServerName"];
+                
+            }
             
-            //获取前台信息成功：：
+            [self setXmppStream];
             
-            /*
-             {
-             account = zkqtjd;
-             deptname = "\U6167\U52a8\U4ff1\U4e50\U90e8";
-             errorCode = 0;
-             errorDesc = "\U83b7\U53d6\U524d\U53f0\U63a5\U5f85\U4eba\U5458\U4fe1\U606f\U6210\U529f";
-             frontDeskId = 10004952;
-             imPort = 5222;
-             imServerName = "218.245.5.76";
-             imUrl = "218.245.5.76";
-             picture = "http://www.holddo.com:80/bdcServer/img/files/img/zkqtjd.png";
-             remark = "\U5065\U5eb7\U7ba1\U7406\U670d\U52a1\U7ecf\U9a8c\U4e30\U5bcc";
-             userName = "\U80e1\U4e9a\U6606";
-             userTel = 18701637235;
-             }---(null)
-            */
-            
-            _waiterNameLabel.text = [info objectForKey:@"userName"];
-            _waiterStatusLabel.text = @"在线";
-            _waiterFromLabel.text = [info objectForKey:@"deptname"];
-            _waiterIntroLabel.text = [info objectForKey:@"remark"];
-            
-            _telNumber = [info objectForKey:@"userTel"];
-            [_mobileTelButtton setTitle:_telNumber forState:UIControlStateNormal];
-            [_mobileTelButtton setTitle:_telNumber forState:UIControlStateHighlighted];
-            
-            __block WlhyWaiterServiceViewController *this = self;
-            NSString *picString = [info objectForKey:@"picture"];
-            [_waiterImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:picString]] placeholderImage:[UIImage imageNamed:picString] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                [this.waiterImageView setImage:image];
-            } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                [this.waiterImageView setImage:[UIImage imageNamed:@"default_qt.png"]];
-            }];
-            
-            
-            _hostName = [info objectForKey:@"imUrl"];
-            _hostPort = [info objectForKey:@"imPort"];
-            _waiterAccount = [info objectForKey:@"account"];
-            _waiterServerName = [info objectForKey:@"imServerName"];
-            
-        } else if([[info objectForKey:@"errorCode"] integerValue] == 2) {
-            //前台繁忙：：
-            
-            /*
-             {
-             errorCode = 2;
-             errorDesc = "\U524d\U53f0\U63a5\U5f85\U5750\U5e2d\U5168\U5fd9,\U8bf7\U7a0d\U540e";
-             imPort = 5222;
-             imServerName = "218.245.5.76";
-             imUrl = "218.245.5.76";
-             }---(null)
-             */
-            
-            _waiterNameLabel.text = @"前台服务";
-            _waiterStatusLabel.text = @"离线";
-            _waiterStatusLabel.textColor = [UIColor colorWithRed:0.9 green:0.4 blue:0.4 alpha:1.0];
-            _waiterFromLabel.text = @"客户服务部";
-            _waiterIntroLabel.text = @"可接受离线消息";
-            [_waiterImageView setImage:[UIImage imageNamed:@"default_qt.png"]];
-            
-            _telNumber = @"010-67052922";
-            [_mobileTelButtton setTitle:_telNumber forState:UIControlStateNormal];
-            [_mobileTelButtton setTitle:_telNumber forState:UIControlStateHighlighted];
-            
-            _hostName = [info objectForKey:@"imUrl"];
-            _hostPort = [info objectForKey:@"imPort"];
-            _waiterAccount = [info objectForKey:@"account"];
-            _waiterServerName = [info objectForKey:@"imServerName"];
-            
+        } else {
+            [self showText:@"连接服务器失败！"];
         }
         
-        [self setXmppStream];
-        
-    } else {
-        [self showText:@"连接服务器失败！"];
+    } else if ([action isEqualToString:wlCommentServerPersonRequest]) {
+        if (info) {
+            if([[info objectForKey:@"errorCode"] integerValue] == 0) {
+                [self showText:@"评价成功"];
+                [self performSelector:@selector(backHome:) withObject:nil afterDelay:1.5f];
+            } else {
+                [self showText:[info objectForKey:@"errorDesc"]];
+            }
+        } else {
+            [self showText:@"连接服务器失败！"];
+        }
     }
     
 }
@@ -299,7 +325,13 @@
     if (!_wlhyXmpp) {
         _wlhyXmpp = [WlhyXMPP WlhyXMPP];
     }
-    [_wlhyXmpp connect];
+    if (_isFromVisitorVC) {
+        //来自游客登录：：
+        [_wlhyXmpp connectWithHostname:_hostName hostPort:_hostPort servername:_waiterServerName];
+    } else {
+        [_wlhyXmpp connect];
+    }
+    
     [_wlhyXmpp setDelegate:self];
     [_wlhyXmpp setMate:_waiterAccount serverName:_waiterServerName];
     
@@ -489,6 +521,7 @@
 -(void)sendTextAction:(NSString *)inputText
 {
     //发送消息
+//    NSString *contentString = [NSString stringWithFormat:@"markyk_mess_%@_%@", [OpenUDID value], inputText];
     [_wlhyXmpp sendMessage:inputText];
 }
 
@@ -496,7 +529,6 @@
 {
     //开始语音识别：：
     [self showText:@"开始说话"];
-    
     [_iFlySpeechRecognizer startListening];
 }
 
@@ -513,15 +545,11 @@
      servicetype     1：前台接待 2：私教
      */
     
-    if ([DBM dbm].currentUsers.memberId == NULL) {
-        return;
-    }
-    
     [self sendRequest:
      
      @{
-     @"memberid": [DBM dbm].currentUsers.memberId,
-     @"pwd": [DBM dbm].currentUsers.pwd,
+     @"memberid": ([DBM dbm].currentUsers.memberId == NULL) ? @"0" : [DBM dbm].currentUsers.memberId,
+     @"pwd": ([DBM dbm].currentUsers.pwd == NULL) ? @"" : [DBM dbm].currentUsers.pwd,
      @"account": _waiterAccount,
      @"result": [NSNumber numberWithInt:index],
      @"content": contentString,
@@ -588,21 +616,25 @@
 }
 - (void) onEndOfSpeech
 {
-    [_iFlySpeechRecognizer stopListening];
+    
 }
 - (void) onError:(IFlySpeechError *) errorCode
 {
-    NSLog(@"error :: %@", errorCode.errorDesc);
+    if (errorCode.errorCode == 0 ) {
+        [self showText:@"识别成功"];
+    } else {
+        NSLog(@"errorCode :: %i", errorCode.errorCode);
+        NSLog(@"error :: %@", errorCode.errorDesc);
+    }
 }
 - (void) onResults:(NSArray *) results
 {
-    [_iFlySpeechRecognizer stopListening];
-    NSMutableString *result = [[NSMutableString alloc] init];
+    NSMutableString *result = [NSMutableString string];
     NSDictionary *dic = [results objectAtIndex:0];
     for (NSString *key in dic) {
         [result appendFormat:@"%@",key];
     }
-    [_inputBar setInputContent:result];
+    _inputBar.textView.text = [NSString stringWithFormat:@"%@%@", _inputBar.textView.text, result];
 }
 - (void) onCancel
 {

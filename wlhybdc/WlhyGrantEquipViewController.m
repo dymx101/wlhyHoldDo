@@ -58,21 +58,18 @@
     [_phoneNumberField becomeFirstResponder];
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
+    [super didReceiveMemoryWarning];
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.wlhyTextDelegate = nil;
     self.phoneNumberField = nil;
     self.dayField = nil;
     self.barDecode = nil;
     self.barDecodeLabel = nil;
-    
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)back:(id)sender

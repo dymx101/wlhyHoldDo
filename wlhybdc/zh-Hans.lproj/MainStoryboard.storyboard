@@ -3052,7 +3052,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bao-J5-m9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="426" y="190"/>
+            <point key="canvasLocation" x="329" y="78"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iaq-FQ-xHT">
@@ -5961,7 +5961,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="5" y="52" width="310" height="442"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">欢迎您选择慧跑赢家俱乐部，请仔细阅读以下条款：
+                                <mutableString key="text">欢迎您选择本俱乐部，请仔细阅读以下条款：
 1)	您在运动前需做好身体检查，确认身体健康的情况下方可锻炼。
 2)	教练开出的运动处方，您有选择权，请根据自身的身体状况选择运动。
 3)	本协议一经签署即代表您确认自身健康能够使用所有设施和参加各项训练。若您在训练期间身体有任何不适应运动的问题，请及时与教练沟通并中止练习，否则造成的后果概不负责。 
@@ -5969,7 +5969,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 5)	若您在签署本协议之时或之后有任何健康或医学方面的担忧，应在使用设施进行个人练习前咨询医生。 
 6)	如果您隐瞒自身健康状况，公司将有权单方面终止协议，且服务激活卡费用将不予退款。
 7)	服务卡费一经售出概不退款。
-</string>
+</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -7876,7 +7876,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <tableViewController storyboardIdentifier="WlhyLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eZ8-r1-GiB" customClass="WlhyLoginViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uba-uV-yoa">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -8061,7 +8061,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <tableViewController storyboardIdentifier="WlhyForgotPasswordViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lyH-FT-BTM" customClass="WlhyForgotPasswordViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="mdO-bV-1JJ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="113"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="113"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.88970822699999996" green="0.88970822699999996" blue="0.88970822699999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -8172,13 +8172,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <tableViewController wantsFullScreenLayout="YES" id="jxH-4v-yjE" customClass="WlhyRegistViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jaU-g1-UyW">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <color key="separatorColor" red="0.88970822699999996" green="0.88970822699999996" blue="0.88970822699999996" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="GQY-Ir-tEL">
-                            <rect key="frame" x="0.0" y="172" width="320" height="60"/>
+                            <rect key="frame" x="0.0" y="192" width="320" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zyu-DU-bnZ">
@@ -8324,7 +8324,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <viewController storyboardIdentifier="WlhyRegistSucceedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z4l-IN-mKD" customClass="WlhyRegistSucceedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sfS-sB-7r1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ok.png" id="9wx-vv-Fj3">
@@ -9246,7 +9246,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="jsdt05.jpg" width="640" height="72"/>
         <image name="jsdt06.jpg" width="640" height="72"/>
         <image name="left.png" width="282" height="219"/>
-        <image name="line3.png" width="480" height="2"/>
+        <image name="line3.png" width="800" height="2"/>
         <image name="lineC.png" width="480" height="2"/>
         <image name="lineX.png" width="480" height="1"/>
         <image name="lion.gif" width="370" height="230"/>
@@ -9279,7 +9279,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="sport_a1.png" width="160" height="152"/>
         <image name="sport_bg3.png" width="192" height="120"/>
         <image name="sport_bg4.png" width="160" height="96"/>
-        <image name="sport_data_pjsdimg.png" width="32" height="32"/>
+        <image name="sport_data_pjsdimg.png" width="48" height="48"/>
         <image name="sport_data_sjhnimg.png" width="48" height="48"/>
         <image name="sport_data_ydjlimg.png" width="32" height="32"/>
         <image name="sport_data_ydscimg.png" width="48" height="48"/>
@@ -9298,826 +9298,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="xx_line.png" width="608" height="1"/>
         <image name="zwxx.png" width="300" height="240"/>
     </resources>
-    <classes>
-        <class className="AOScrollerView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AOScrollerView.h"/>
-        </class>
-        <class className="BrokenLineView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BrokenLineView.h"/>
-        </class>
-        <class className="JHTickerView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JHTickerView.h"/>
-        </class>
-        <class className="LengthValidator" superclassName="Validator">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LengthValidator.h"/>
-        </class>
-        <class className="LineChartView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LineChartView.h"/>
-        </class>
-        <class className="RatingView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RatingView.h"/>
-        </class>
-        <class className="TelnumberValidator" superclassName="Validator">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TelnumberValidator.h"/>
-        </class>
-        <class className="UIBubbleTableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIBubbleTableView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bubbleDataSource"/>
-            </relationships>
-        </class>
-        <class className="Validator" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Validator.h"/>
-        </class>
-        <class className="WlhyAboutHoldDoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyAboutHoldDoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="WlhyAccountInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyAccountInfoViewController.h"/>
-        </class>
-        <class className="WlhyAdviceInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyAdviceInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelInput:"/>
-                <relationship kind="outlet" name="adviceTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="inputView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="phoneField" candidateClass="WlhyTextField"/>
-                <relationship kind="outlet" name="typeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="wlhyTextDelegate" candidateClass="WlhyUITextFieldDelegate"/>
-            </relationships>
-        </class>
-        <class className="WlhyBikePrescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyBikePrescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelAuth:"/>
-                <relationship kind="action" name="doSportHandler:"/>
-                <relationship kind="action" name="ensureAuth:"/>
-                <relationship kind="outlet" name="equipImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="goalEnergyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="inputField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="prescGoalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="projectNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="smallAuthView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sportTypeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyBikeSportViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyBikeSportViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="controllButtonHandler:"/>
-                <relationship kind="outlet" name="animationImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="countDownImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="currentSpeedLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentStepLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentStepTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="equipConnectionStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="runView" candidateClass="LineChartView"/>
-                <relationship kind="outlet" name="serverConnectionStateLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyBodyKPIViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyBodyKPIViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dbzLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="fllLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="heightLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="jrLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="qztzLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sfLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="ssyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="szyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="updateTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="waistLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weightLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="wjyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="xbnyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="xbwyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="xlLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="zfLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyBuyEquipViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyBuyEquipViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancleInput:"/>
-                <relationship kind="outlet" name="addressTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="notesTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="phoneTextField" candidateClass="WlhyTextField"/>
-                <relationship kind="outlet" name="wlhyTextDelegate" candidateClass="WlhyUITextFieldDelegate"/>
-            </relationships>
-        </class>
-        <class className="WlhyChangeTrainViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyChangeTrainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="currentNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="goalNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="inputTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="WlhyCommonPrescViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyCommonPrescViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonTouched:"/>
-            </relationships>
-        </class>
-        <class className="WlhyCustomWidthCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyCustomWidthCell.h"/>
-        </class>
-        <class className="WlhyDateTextField" superclassName="UITextField">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyDateTextField.h"/>
-            <relationships>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="WlhyEquipButtonCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyEquipButtonCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="evaluateButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="repairsButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="WlhyEquipEvaluateCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyEquipEvaluateCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="contentLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="headPicImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="ratingView" candidateClass="RatingView"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyEquipEvaluateCountCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyEquipEvaluateCountCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="evaluate1Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="evaluate2Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="evaluate3Label" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyEquipImageShowCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyEquipImageShowCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="equipImagesScrollView" candidateClass="AOScrollerView"/>
-                <relationship kind="outlet" name="errorImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="WlhyEquipInfoCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyEquipInfoCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="contractNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="equipInfoView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="equipIntroTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="equipLifeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="equipModelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="errorDescLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="instructionButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="telNumberLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="unionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyEquipInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyEquipInfoViewController.h"/>
-        </class>
-        <class className="WlhyEvaluateEquipViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyEvaluateEquipViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancleInput:"/>
-                <relationship kind="outlet" name="contentTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="phoneTextField" candidateClass="WlhyTextField"/>
-                <relationship kind="outlet" name="ratingView" candidateClass="RatingView"/>
-                <relationship kind="outlet" name="wlhyTextDelegate" candidateClass="WlhyUITextFieldDelegate"/>
-            </relationships>
-        </class>
-        <class className="WlhyFieldInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyFieldInfoViewController.h"/>
-        </class>
-        <class className="WlhyFitnessCardCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyFitnessCardCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activeTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cardIdLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cardTypeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cellBackgroundView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="clubNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="expireTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="serviceNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="useTimesLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyFitnessClassCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyFitnessClassCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="classNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="classThumbImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="endTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scanCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="teacherNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyFitnessClassViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyFitnessClassViewController.h"/>
-        </class>
-        <class className="WlhyFitnessCountViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyFitnessCountViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeDateSpanAction:"/>
-                <relationship kind="outlet" name="avgSpeedLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buttonA" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonB" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonC" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="dateSpanSegment" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="showDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalDistanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalTimeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyFitnessGoalViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyFitnessGoalViewController.h"/>
-        </class>
-        <class className="WlhyFitnessHallViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyFitnessHallViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="clubRankLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="distanceTogetherLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hallMemberTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="memberDistanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberEnergyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberHeadImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="memberNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nearMemberButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rivalDistanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rivalEnergyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rivalHeadImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="rivalNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rivalTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalRankLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyFitnessTipsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyFitnessTipsViewController.h"/>
-        </class>
-        <class className="WlhyFloatView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyFloatView.h"/>
-        </class>
-        <class className="WlhyForgotPasswordViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyForgotPasswordViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="forgotPasswordAction:"/>
-                <relationship kind="action" name="vCodeAction:"/>
-                <relationship kind="outlet" name="phoneTextField" candidateClass="WlhyTextField"/>
-                <relationship kind="outlet" name="vCodeButton" candidateClass="WlhySecurityCodeButton"/>
-                <relationship kind="outlet" name="vCodeTextField" candidateClass="WlhyTextField"/>
-            </relationships>
-        </class>
-        <class className="WlhyGrantEquipViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyGrantEquipViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelInput:"/>
-                <relationship kind="action" name="grantButtonTapped:"/>
-                <relationship kind="outlet" name="barDecodeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dayField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneNumberField" candidateClass="WlhyTextField"/>
-                <relationship kind="outlet" name="wlhyTextDelegate" candidateClass="WlhyUITextFieldDelegate"/>
-            </relationships>
-        </class>
-        <class className="WlhyHallMemberCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyHallMemberCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="calCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="distanceCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="manifestoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberSexImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="memberThumbImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="rankLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeCountLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyHoldDoStoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyHoldDoStoreViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="WlhyHomeTitleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyHomeTitleViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dropDownAction:"/>
-                <relationship kind="outlet" name="dropDownButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="totalEnergyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalTimeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyHomeViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyHomeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startNewSport:"/>
-                <relationship kind="action" name="weatherButtonTouched:"/>
-                <relationship kind="outlet" name="goalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="greetLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="integralLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="launcherView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="paramLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tickerView" candidateClass="JHTickerView"/>
-                <relationship kind="outlet" name="titleView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="weatherButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="WlhyImageScrollView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyImageScrollView.h"/>
-        </class>
-        <class className="WlhyLoginViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="autoLoginSwitchHandler:"/>
-                <relationship kind="action" name="cancleInput:"/>
-                <relationship kind="action" name="loginAction:"/>
-                <relationship kind="outlet" name="autoLoginSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="password" candidateClass="WlhyTextField"/>
-                <relationship kind="outlet" name="username" candidateClass="WlhyTextField"/>
-                <relationship kind="outlet" name="wlhyTextDelegate" candidateClass="WlhyUITextFieldDelegate"/>
-            </relationships>
-        </class>
-        <class className="WlhyManifestoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyManifestoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancleInputAction:"/>
-                <relationship kind="outlet" name="manifestoTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="WlhyMemberEquipCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyMemberEquipCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="barDecodeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="equipImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="equipNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="equipTimeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyMessageReminderViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyMessageReminderViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="headerView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="WlhyModifyHistoryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyModifyHistoryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="brokenLineView" candidateClass="BrokenLineView"/>
-            </relationships>
-        </class>
-        <class className="WlhyModifyMemberPwdViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyModifyMemberPwdViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancleInput:"/>
-                <relationship kind="outlet" name="ensurePwd" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="oldPwd" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pwd" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textDelete" candidateClass="WlhyUITextFieldDelegate"/>
-            </relationships>
-        </class>
-        <class className="WlhyModifyPhoneViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyModifyPhoneViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancleInput:"/>
-            </relationships>
-        </class>
-        <class className="WlhyMuitableSelectView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyMuitableSelectView.h"/>
-        </class>
-        <class className="WlhyMyEquipViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyMyEquipViewController.h"/>
-        </class>
-        <class className="WlhyNearMemberCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyNearMemberCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="calCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="distanceCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberCityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberManifestoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberSexLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberThumbImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="timeCountLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyNearMemberViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyNearMemberViewController.h"/>
-        </class>
-        <class className="WlhyNewSportViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyNewSportViewController.h"/>
-        </class>
-        <class className="WlhyNoBikePrescriptionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyNoBikePrescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="gotoTrain:"/>
-                <relationship kind="action" name="gotoWaiter:"/>
-                <relationship kind="outlet" name="descLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="introTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="WlhyNoRunPrescriptionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyNoRunPrescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commonPrescView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="descLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="introTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="WlhyNoTrainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyNoTrainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="gotoWaiter:"/>
-                <relationship kind="action" name="recharge:"/>
-                <relationship kind="outlet" name="descLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="introTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="WlhyOwnedEquipCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyOwnedEquipCell.h"/>
-            <relationships>
-                <relationship kind="action" name="grantButtonTapped:"/>
-                <relationship kind="outlet" name="barDecodeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="equipImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="equipNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="equipTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="phoneNumberLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyPrescriptionEvaluateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyPrescriptionEvaluateViewController.h"/>
-        </class>
-        <class className="WlhyPrivateTrainCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyPrivateTrainCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="trainAgeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainHonorLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainIntroductionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainSexImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="trainStatusLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainThumbImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="trainWorkTimeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyPrivateTrainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyPrivateTrainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelInput:"/>
-                <relationship kind="action" name="changeTrainButton:"/>
-                <relationship kind="action" name="telButtonTapped:"/>
-                <relationship kind="outlet" name="chatBubbleTableView" candidateClass="UIBubbleTableView"/>
-                <relationship kind="outlet" name="mobileTelButtton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="trainClubLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="trainInfoView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="trainNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainStatusLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainTelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainWorkTimeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyRechargeErrorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyRechargeErrorViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="gotoWaiter:"/>
-                <relationship kind="action" name="recharge:"/>
-                <relationship kind="outlet" name="destLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="introTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="WlhyRechargeScanViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyRechargeScanViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="button1Tapped:"/>
-                <relationship kind="action" name="button2Tapped:"/>
-                <relationship kind="action" name="button3Tapped:"/>
-                <relationship kind="action" name="button4Tapped:"/>
-                <relationship kind="action" name="inputOK:"/>
-                <relationship kind="outlet" name="button1" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button2" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button3" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button4" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="inputField1" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="inputField2" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="inputView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scanBackgroundImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="WlhyRechargeViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyRechargeViewController.h"/>
-        </class>
-        <class className="WlhyRegistSucceedViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyRegistSucceedViewController.h"/>
-        </class>
-        <class className="WlhyRegistViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyRegistViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancleInput:"/>
-                <relationship kind="action" name="registAction:"/>
-                <relationship kind="outlet" name="ensurePassword" candidateClass="WlhyTextField"/>
-                <relationship kind="outlet" name="password" candidateClass="WlhyTextField"/>
-                <relationship kind="outlet" name="textFieldDelegate" candidateClass="WlhyUITextFieldDelegate"/>
-                <relationship kind="outlet" name="username" candidateClass="WlhyTextField"/>
-            </relationships>
-        </class>
-        <class className="WlhyRepairsEquipViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyRepairsEquipViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancleInput:"/>
-                <relationship kind="outlet" name="contentTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="phoneTextField" candidateClass="WlhyTextField"/>
-                <relationship kind="outlet" name="picScrollView" candidateClass="WlhyImageScrollView"/>
-                <relationship kind="outlet" name="wlhyTextDelegate" candidateClass="WlhyUITextFieldDelegate"/>
-            </relationships>
-        </class>
-        <class className="WlhyRootViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyRootViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="backImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="WlhyRunPrescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyRunPrescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelAuth:"/>
-                <relationship kind="action" name="doSportHandler:"/>
-                <relationship kind="action" name="ensureAuth:"/>
-                <relationship kind="outlet" name="commonPrescView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="equipImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="goalEnergyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="inputField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="prescGoalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="projectNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="smallAuthView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sportTypeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyRunSportViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyRunSportViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="controllButtonHandler:"/>
-                <relationship kind="action" name="viewTapped:"/>
-                <relationship kind="outlet" name="animationImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="countDownImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="currentSlopeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentSpeedLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentStepLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentStepTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="equipConnectionStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="runView" candidateClass="LineChartView"/>
-                <relationship kind="outlet" name="serverConnectionStateLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyScanInstructionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyScanInstructionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="WlhySecurityCodeButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhySecurityCodeButton.h"/>
-        </class>
-        <class className="WlhyServiceClauseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyServiceClauseViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="agreeTapped:"/>
-                <relationship kind="action" name="disagreeTapped:"/>
-                <relationship kind="outlet" name="contentTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="WlhySportHabitViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhySportHabitViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sportItemsView" candidateClass="WlhyMuitableSelectView"/>
-                <relationship kind="outlet" name="sportPeriodsView" candidateClass="WlhyMuitableSelectView"/>
-                <relationship kind="outlet" name="sportTimesSegment" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="WlhySportTotalCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhySportTotalCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="durationDistance" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="durationTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sportStartButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="totalDistance" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalKal" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalTime" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyStationInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyStationInfoViewController.h"/>
-        </class>
-        <class className="WlhyStrengthPrescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyStrengthPrescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelAuth:"/>
-                <relationship kind="action" name="doSportHandler:"/>
-                <relationship kind="action" name="ensureAuth:"/>
-                <relationship kind="outlet" name="equipImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="goalEnergyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="inputField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="prescGoalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="projectNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="smallAuthView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sportTypeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyStrengthSportCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyStrengthSportCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="currentStep" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="remainTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sportStartButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="WlhyStrengthSportViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyStrengthSportViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="controllButtonHandler:"/>
-                <relationship kind="outlet" name="animationImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="countDownImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="equipConnectionStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="serverConnectionStateLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhySystemMessageCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhySystemMessageCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellBGImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="messageContentLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="messageTimeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyTextField" superclassName="UITextField">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyTextField.h"/>
-            <relationships>
-                <relationship kind="outlet" name="validator" candidateClass="Validator"/>
-            </relationships>
-        </class>
-        <class className="WlhyTrainDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyTrainDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="telButtonTapped:"/>
-                <relationship kind="outlet" name="QQLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="ageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="educationLevelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="emailLabel" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="experienceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="headImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="honorLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mobileTelButtton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sexIconImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="WlhyTrainInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyTrainInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bindButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="trainExperienceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="trainIntroductionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainLevelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainQQLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainSexLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainStatusLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainTelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trainWorkTimeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyTyjPrescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyTyjPrescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelAuth:"/>
-                <relationship kind="action" name="doSportHandler:"/>
-                <relationship kind="action" name="ensureAuth:"/>
-                <relationship kind="outlet" name="equipImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="goalEnergyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="inputField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="prescGoalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="projectNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="smallAuthView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sportTypeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyTyjSportViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyTyjSportViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="controllButtonHandler:"/>
-                <relationship kind="outlet" name="animationImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="countDownImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="currentSpeedLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentStepLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentStepTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="equipConnectionStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="runView" candidateClass="LineChartView"/>
-                <relationship kind="outlet" name="serverConnectionStateLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyUITextFieldDelegate" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyUITextFieldDelegate.h"/>
-        </class>
-        <class className="WlhyUserBaseInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyUserBaseInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancleInputAction:"/>
-                <relationship kind="outlet" name="birthdayTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cityTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="heightTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="memberIdLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="sexSegmente" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="telphoneLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="waistTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="WlhyUserCenterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyUserCenterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="imageTouched:"/>
-                <relationship kind="action" name="logout:"/>
-                <relationship kind="outlet" name="HDILabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="headImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="intergralLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="isVipImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="manifestoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberLevelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="serviceStarImages" candidateClass="WlhyFloatView"/>
-                <relationship kind="outlet" name="totalEnergy" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userStatusLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyVisitorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyVisitorViewController.h"/>
-        </class>
-        <class className="WlhyWaiterServiceViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyWaiterServiceViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelInput:"/>
-                <relationship kind="action" name="telButtonTapped:"/>
-                <relationship kind="outlet" name="chatView" candidateClass="UIBubbleTableView"/>
-                <relationship kind="outlet" name="mobileTelButtton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="waiterFromLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="waiterImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="waiterInfoView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="waiterIntroLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="waiterNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="waiterStatusLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyWeatherViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyWeatherViewController.h"/>
-        </class>
-        <class className="WlhyWeekPrescriptionCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyWeekPrescriptionCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dayLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="equipNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="goalEnergyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sportTypeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WlhyWeekPrescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyWeekPrescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sectionHeaderView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="WlhyZBarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WlhyZBarViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="button1Tapped:"/>
-                <relationship kind="action" name="button2Tapped:"/>
-                <relationship kind="action" name="button3Tapped:"/>
-                <relationship kind="action" name="button4Tapped:"/>
-                <relationship kind="action" name="inputOK:"/>
-                <relationship kind="outlet" name="button1" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button2" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button3" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button4" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="inputField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="inputView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scanBackgroundImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -10125,7 +9305,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="hiD-Q2-wwo"/>
-        <segue reference="Wib-hh-KoP"/>
         <segue reference="Q35-do-qu5"/>
+        <segue reference="aeh-Mg-rZv"/>
     </inferredMetricsTieBreakers>
 </document>

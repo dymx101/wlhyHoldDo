@@ -90,31 +90,30 @@
     [_readerView stop];
 }
 
-- (void)viewDidUnload
-{
-    [self setDelegate:nil];
-    
-    self.readerView = nil;
-    self.imagePickerVC = nil;
-    
-    self.button1 = nil;
-    self.button2 = nil;
-    self.button3 = nil;
-    self.button4 = nil;
-    
-    self.inputView = nil;
-    self.inputField1 = nil;
-    self.inputField2 = nil;
-    self.buttonsView = nil;
-    self.scanBackgroundImageView = nil;
-    
-    [super viewDidUnload];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+        [self setDelegate:nil];
+        
+        self.readerView = nil;
+        self.imagePickerVC = nil;
+        
+        self.button1 = nil;
+        self.button2 = nil;
+        self.button3 = nil;
+        self.button4 = nil;
+        
+        self.inputView = nil;
+        self.inputField1 = nil;
+        self.inputField2 = nil;
+        self.buttonsView = nil;
+        self.scanBackgroundImageView = nil;
+
+    }
+    
 }
 
 

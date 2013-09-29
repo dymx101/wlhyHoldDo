@@ -52,7 +52,7 @@ typedef enum {
 - (void)sendMessage:(NSString *)messageContent;
 
 - (void)connect;
-- (void)forceConnect;
+- (void)connectWithHostname:(NSString *)kHostName hostPort:(NSString *)kHostPort servername:(NSString *)kServerName;
 - (void)disconnect;
 
 - (void)goOnLine;

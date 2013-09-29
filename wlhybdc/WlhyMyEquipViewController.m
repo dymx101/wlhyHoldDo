@@ -180,20 +180,14 @@
     
 }
 
-- (void)viewDidUnload
-{
-    self.ownedEquipArray = nil;
-    self.authedEquipArray = nil;
-    self.usedEquipArray = nil;
-    
-    [super viewDidUnload];
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 
-    self.view = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.ownedEquipArray = nil;
     self.authedEquipArray = nil;
     self.usedEquipArray = nil;

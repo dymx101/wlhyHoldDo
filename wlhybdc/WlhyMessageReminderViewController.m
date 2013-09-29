@@ -133,7 +133,13 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.systemMessageArray = nil;
+    self.headerView = nil;
+    
 }
 
 - (void)back:(id)sender

@@ -85,19 +85,21 @@
     }
 }
 
-- (void)viewDidUnload
-{
-    [self setWlhyTextDelegate:nil];
-    [self setUsername:nil];
-    [self setPassword:nil];
-    [self setAutoLoginSwitch:nil];
-    
-    [super viewDidUnload];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.wlhyTextDelegate = nil;
+    self.username = nil;
+    self.password = nil;
+    self.autoLoginSwitch = nil;
+    self.isLogin = nil;
+    self.pwd = nil;
+    self.isFromVisitorVC = nil;
+    
 }
 
 - (void)back:(id)sender

@@ -30,10 +30,11 @@
 
 @interface FaceToolBar : UIToolbar <facialViewDelegate,UIExpandingTextViewDelegate,UIScrollViewDelegate>
 
+@property(strong, nonatomic) UIExpandingTextView *textView;//文本输入框
 @property(nonatomic,strong) UIView *theSuperView;
 @property (weak) NSObject<FaceToolBarDelegate> *delegate;
 
-- (void)setInputContent:(NSString *)content;
+
 - (void)dismissKeyBoard;
 - (id)initWithFrame:(CGRect)frame superView:(UIView *)superView;
 

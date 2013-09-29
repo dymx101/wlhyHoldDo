@@ -87,8 +87,10 @@
     
     [self sendRequest:
      
-     @{@"memberId":[DBM dbm].currentUsers.memberId,
-     @"pwd":[DBM dbm].currentUsers.pwd}
+     @{
+     @"memberId":[DBM dbm].currentUsers.memberId,
+     @"pwd":[DBM dbm].currentUsers.pwd
+     }
      
                action:wlGetWeekPrescRequest
         baseUrlString:wlServer];
@@ -97,7 +99,12 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.prescArray = nil;
+    self.sectionHeaderView = nil;
 }
 
 -(void)back:(id)sender

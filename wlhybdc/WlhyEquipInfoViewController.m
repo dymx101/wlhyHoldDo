@@ -193,7 +193,7 @@
 //===============================================================================================
 //===============================================================================================
 
-const int pageSize = 5;
+const int equipPageSize = 5;
 
 @interface WlhyEquipInfoViewController () <WlhyZBarDelegate, ValueClickDelegate, UITableViewDelegate, UITableViewDataSource>
 {
@@ -299,7 +299,9 @@ const int pageSize = 5;
 {
     [super didReceiveMemoryWarning];
     
-    self.view = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.equipInfo = nil;
     self.equipPicArray = nil;
     self.instructionPath = nil;
@@ -419,7 +421,7 @@ const int pageSize = 5;
                  @"memberid": ([DBM dbm].currentUsers.memberId == NULL) ? @"0" : [DBM dbm].currentUsers.memberId,
                  @"pwd": ([DBM dbm].currentUsers.clearPwd == NULL) ? @"" : [DBM dbm].currentUsers.clearPwd,
                  @"barcodeid": _barDecode,
-                 @"pageSize": [NSNumber numberWithInt:pageSize],
+                 @"pageSize": [NSNumber numberWithInt:equipPageSize],
                  @"page": [NSNumber numberWithInt:++currentPage]
                  }
                  
@@ -711,7 +713,7 @@ const int pageSize = 5;
          @"memberid": ([DBM dbm].currentUsers.memberId == NULL) ? @"0" : [DBM dbm].currentUsers.memberId,
          @"pwd": ([DBM dbm].currentUsers.clearPwd == NULL) ? @"" : [DBM dbm].currentUsers.clearPwd,
          @"barcodeid": _barDecode,
-         @"pageSize": [NSNumber numberWithInt:pageSize],
+         @"pageSize": [NSNumber numberWithInt:equipPageSize],
          @"page": [NSNumber numberWithInt:++currentPage]
          }
          

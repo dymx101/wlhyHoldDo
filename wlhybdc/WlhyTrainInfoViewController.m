@@ -65,14 +65,18 @@
 {
     
     //页面出现的时候，根据私教id去请求私教详细信息：：
-    [self sendRequest:
-     
-     @{@"memberId":[DBM dbm].currentUsers.memberId,
-     @"pwd":[DBM dbm].currentUsers.pwd,
-     @"servicePersonId": _trainID}
-     
-               action:wlGetCertainTrainInfoRequest
-        baseUrlString:wlServer];
+    if (!_trainInfo) {
+        [self sendRequest:
+         
+         @{
+         @"memberId":[DBM dbm].currentUsers.memberId,
+         @"pwd":[DBM dbm].currentUsers.pwd,
+         @"servicePersonId": _trainID
+         }
+         
+                   action:wlGetCertainTrainInfoRequest
+            baseUrlString:wlServer];
+    }
     
     if (_rechargeVCPurpose == RechargeVCPurposeChangeTrain) {
         [_bindButton setTitle:@"选为我的新私教" forState:UIControlStateNormal];
@@ -85,6 +89,18 @@
 
 - (void)viewDidUnload
 {
+    
+    
+    [super viewDidUnload];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.trainImageView = nil;
     self.trainNameLabel = nil;
     self.trainLevelLabel = nil;
@@ -96,16 +112,8 @@
     self.trainIntroductionLabel = nil;
     self.trainExperienceLabel = nil;
     self.bindButton = nil;
-    self.trainInfo = nil;
-    self.trainID = nil;
     
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.trainInfo = nil;
 }
 
 #pragma mark - processRequest
@@ -286,7 +294,6 @@
 
 - (IBAction)bindTrain:(id)sender
 {
-    NSLog(@"bind");
     
     NSLog(@"bind train info :: %@", _trainInfo);
     

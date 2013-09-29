@@ -57,7 +57,9 @@ typedef enum {
 {
     [super didReceiveMemoryWarning];
     
-    self.view = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.totalTimeLabel = nil;
     self.totalEnergyLabel = nil;
     self.dropDownButton = nil;

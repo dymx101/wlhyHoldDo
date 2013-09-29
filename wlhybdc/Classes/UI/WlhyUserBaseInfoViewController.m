@@ -120,7 +120,9 @@
 {
     [super didReceiveMemoryWarning];
     
-    self.view = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.memberIdLabel = nil;
     self.telphoneLabel = nil;
     self.nameTextField = nil;

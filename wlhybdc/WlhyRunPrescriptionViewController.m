@@ -92,7 +92,6 @@ typedef enum {
                        [NSNumber numberWithBool:NO],
                        [NSNumber numberWithBool:NO],nil];
     
-    NSLog(@"%@ -- %@", _barDecode, _prescInfo);
 
     authStatus = AuthUnknown;
     _temporaryTrainID = [NSNumber numberWithInt:-1];
@@ -156,11 +155,10 @@ typedef enum {
     [self setUIWithPrescInfo];
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    self.barDecode = nil;
-    self.prescriptionId = nil;
-    self.commonPrescTag = nil;
+    [super didReceiveMemoryWarning];
+    
     self.prescInfo = nil;
     self.sectionTitleArr = nil;
     self.sectionTapArray = nil;
@@ -170,14 +168,11 @@ typedef enum {
     self.goalEnergyLabel = nil;
     self.equipImageView = nil;
     self.commonPrescView = nil;
+    self.bigAuthView = nil;
     
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
 }
 
 - (void)back:(id)sender

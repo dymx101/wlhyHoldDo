@@ -62,20 +62,17 @@
     self.navigationItem.leftBarButtonItem = backItem;
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
+    [super didReceiveMemoryWarning];
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     [self setUsername:nil];
     [self setPassword:nil];
     [self setEnsurePassword:nil];
     [self setTextFieldDelegate:nil];
-    
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)back:(id)sender

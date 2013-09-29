@@ -143,9 +143,6 @@ const int pageSize = 10;
 {
     [super viewWillAppear:animated];
     
-    [self showText:@"正在获取您的位置信息"];
-    [_locationManager startUpdatingLocation];//启动位置管理器
-
     if (!_backgroundImageView) {
         _backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     }
@@ -158,23 +155,45 @@ const int pageSize = 10;
     } else {
         [_backgroundImageView setImage:[UIImage imageNamed:@"jskt_bg1008.jpg"]];
     }
-    
     [self.view sendSubviewToBack:_backgroundImageView];
+    
+    
+    if (_hallMemberArray.count <= 0) {
+        [self showText:@"正在获取您的位置信息"];
+        [_locationManager startUpdatingLocation];//启动位置管理器
+    }
+
+    
 }
 
 
-
-- (void)viewDidUnload
-{
-    
-    
-    [super viewDidUnload];
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.hallMemberArray = nil;
+    self.currentIndexPath = nil;
+    self.hallMemberTableView = nil;
+    self.nearMemberButton = nil;
+    self.memberHeadImageView = nil;
+    self.memberNameLabel = nil;
+    self.memberTimeLabel = nil;
+    self.memberDistanceLabel = nil;
+    self.memberEnergyLabel = nil;
+    self.rivalHeadImageView = nil;
+    self.rivalNameLabel = nil;
+    self.rivalTimeLabel = nil;
+    self.rivalDistanceLabel = nil;
+    self.rivalEnergyLabel = nil;
+    self.distanceTogetherLabel = nil;
+    self.clubRankLabel = nil;
+    self.totalRankLabel = nil;
+    self.locationManager = nil;
+    self.backgroundImageView = nil;
 }
 
 - (void)back:(id)sender

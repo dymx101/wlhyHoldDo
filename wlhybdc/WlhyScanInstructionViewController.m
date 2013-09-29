@@ -78,7 +78,9 @@
     [super didReceiveMemoryWarning];
     
     
-    self.view = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.instructionPath = nil;
     self.webView = nil;
     self.downLoader = nil;

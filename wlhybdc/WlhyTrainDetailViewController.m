@@ -147,7 +147,22 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.headImageView = nil;
+    self.sexIconImageView = nil;
+    self.nameLabel = nil;
+    self.ageLabel = nil;
+    self.educationLevelLabel = nil;
+    self.mobileTelButtton = nil;
+    self.QQLabel = nil;
+    self.emailLabel = nil;
+    self.experienceLabel = nil;
+    self.honorLabel = nil;
+    
+    self.trainInfo = nil;
 }
 
 - (void)back:(id)sender

@@ -14,7 +14,7 @@
 @property (strong, nonatomic) IBOutlet WlhyTextField *phoneTextField;
 @property (strong, nonatomic) IBOutlet WlhyTextField *vCodeTextField;
 
-@property(nonatomic,strong)NSString* vCodeString;
+@property(nonatomic,strong) NSString* vCodeString;
 
 -(IBAction)forgotPasswordAction:(id)sender;
 - (IBAction)vCodeAction:(id)sender;
@@ -59,16 +59,16 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.vCodeButton = nil;
+    self.phoneTextField = nil;
+    self.vCodeTextField = nil;
+    self.vCodeString = nil;
 }
 
-
-- (void)viewDidUnload {
-    [self setVCodeButton:nil];
-    [self setPhoneTextField:nil];
-    [self setVCodeTextField:nil];
-    [super viewDidUnload];
-}
 
 - (void)back:(id)sender
 {

@@ -64,17 +64,14 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-}
-
-
-- (void)viewDidUnload
-{
-    [self setOldPwd:nil];
-    [self setPwd:nil];
-    [self setEnsurePwd:nil];
-    [self setTextDelete:nil];
     
-    [super viewDidUnload];
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
+    self.oldPwd = nil;
+    self.pwd = nil;
+    self.ensurePwd = nil;
+    self.textDelete = nil;
 }
 
 - (void)back:(id)sender

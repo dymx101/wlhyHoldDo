@@ -294,7 +294,17 @@ static CGFloat TimerInterval = 0.5f;
 
 - (void)viewDidUnload
 {
+    
+    
+    [super viewDidUnload];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
     [_iFlySpeechSynthesizer setDelegate:nil];
+    self.iFlySpeechSynthesizer = nil;
     [_sportRunTimer invalidate];
     
     self.barDecode = nil;
@@ -327,13 +337,9 @@ static CGFloat TimerInterval = 0.5f;
     self.runView = nil;
     self.sportGuideMessageView = nil;
     
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
 }
 
 #pragma mark - navBar handler

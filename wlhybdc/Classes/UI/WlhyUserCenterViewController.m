@@ -143,7 +143,9 @@
     
     [super didReceiveMemoryWarning];
     
-    self.view = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+    }
     self.headImageView = nil;
     self.nameLabel = nil;
     self.memberLevelLabel = nil;

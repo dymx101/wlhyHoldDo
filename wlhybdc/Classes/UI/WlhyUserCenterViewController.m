@@ -104,7 +104,10 @@
     self.intergralLabel.text=WlhyString(dbm.usersExt.integral);
     self.totalTimeLabel.text=WlhyString(dbm.usersExt.totalTime);
     self.totalEnergy.text=WlhyString([NSString stringWithFormat:@"%.2f", [dbm.usersExt.totalEnergy floatValue]]);
-    self.userStatusLabel.text= [self getMemberStatus];
+    self.userStatusLabel.text= getMemberStatus();
+    if ([self.userStatusLabel.text isEqualToString:@"服务未激活"]) {
+        self.userStatusLabel.textColor = AlertColor;
+    }
     self.HDILabel.text= WlhyString(dbm.usersExt.hdi);
     
     self.manifestoLabel.numberOfLines = 0;
@@ -145,22 +148,23 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.headImageView = nil;
+        self.nameLabel = nil;
+        self.memberLevelLabel = nil;
+        self.intergralLabel = nil;
+        self.userStatusLabel = nil;
+        self.HDILabel = nil;
+        self.manifestoLabel = nil;
+        self.totalTimeLabel = nil;
+        self.totalEnergy = nil;
+        self.isVipImage = nil;
+        self.serviceStarImages = nil;
+        
+        self.imagePickerVC = nil;
+        self.pickerImage = nil;
+        self.imageData = nil;
     }
-    self.headImageView = nil;
-    self.nameLabel = nil;
-    self.memberLevelLabel = nil;
-    self.intergralLabel = nil;
-    self.userStatusLabel = nil;
-    self.HDILabel = nil;
-    self.manifestoLabel = nil;
-    self.totalTimeLabel = nil;
-    self.totalEnergy = nil;
-    self.isVipImage = nil;
-    self.serviceStarImages = nil;
     
-    self.imagePickerVC = nil;
-    self.pickerImage = nil;
-    self.imageData = nil;
     
 }
 
@@ -418,26 +422,20 @@
     
 }
 
-- (NSString *)getMemberStatus
-{
-    NSString *memberStatus = [[DBM dbm] usersExt].memberStatus;
-    if ([memberStatus intValue] == 1) {
-        return @"正常";
-    } else if ([memberStatus intValue] == 2) {
-        return @"服务已到期";
-    }
-    return @"服务未激活";
-}
-
 - (void)rightItemTouched:(id)sender
 {
-    NSLog(@"rightItemTouched");
-    
-    UIViewController *destVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WlhyAccountInfoViewController"];
-    if (destVC) {
-        [self.navigationController pushViewController:destVC animated:NO];
+    if ([getMemberStatus() isEqualToString:@"服务未激活"]) {
+        UIViewController *destVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WlhyNoTrainViewController"];
+        if ([destVC respondsToSelector:@selector(setDesc:)]) {
+            [destVC setValue:@"您的服务尚未激活，激活后可查看您的账户信息" forKey:@"desc"];
+            [self.navigationController pushViewController:destVC animated:YES];
+        }
+    } else {
+        UIViewController *destVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WlhyAccountInfoViewController"];
+        if (destVC) {
+            [self.navigationController pushViewController:destVC animated:NO];
+        }
     }
-    
 }
 
 - (void)back:(id)sender

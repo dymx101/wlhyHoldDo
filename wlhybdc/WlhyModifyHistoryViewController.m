@@ -94,9 +94,10 @@
 
     if (self.view.window == nil) {
         self.view = nil;
+        self.brokenLineView = nil;
+        self.scanParam = nil;
     }
-    self.brokenLineView = nil;
-    self.scanParam = nil;
+    
 }
 
 - (void)back:(id)sender

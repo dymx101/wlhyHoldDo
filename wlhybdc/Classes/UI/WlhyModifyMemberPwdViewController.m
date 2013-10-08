@@ -67,11 +67,12 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.oldPwd = nil;
+        self.pwd = nil;
+        self.ensurePwd = nil;
+        self.textDelete = nil;
     }
-    self.oldPwd = nil;
-    self.pwd = nil;
-    self.ensurePwd = nil;
-    self.textDelete = nil;
+    
 }
 
 - (void)back:(id)sender

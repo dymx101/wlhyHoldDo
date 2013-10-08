@@ -59,10 +59,10 @@ typedef enum {
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.totalTimeLabel = nil;
+        self.totalEnergyLabel = nil;
+        self.dropDownButton = nil;
     }
-    self.totalTimeLabel = nil;
-    self.totalEnergyLabel = nil;
-    self.dropDownButton = nil;
 }
 
 

@@ -102,9 +102,10 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.prescArray = nil;
+        self.sectionHeaderView = nil;
     }
-    self.prescArray = nil;
-    self.sectionHeaderView = nil;
+    
 }
 
 -(void)back:(id)sender

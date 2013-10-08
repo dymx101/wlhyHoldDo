@@ -16,6 +16,13 @@
 #import "CMPopTipView.h"
 #import "WlhyXMPP.h"
 #import "FileManage.h"
+#import "HomeTitleView.h"
+
+
+
+//============================================================================================================
+//============================================================================================================
+
 
 @interface WlhyHomeViewController () 
 
@@ -30,11 +37,7 @@
 @property(strong, nonatomic) IBOutlet UILabel *paramLabel;
 @property(strong, nonatomic) IBOutlet JHTickerView *tickerView;
 
-@property(strong, nonatomic) IBOutlet UIView *titleView;
-@property(strong, nonatomic) IBOutlet UILabel *greetLabel;
-@property(strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property(strong, nonatomic) IBOutlet UILabel *integralLabel;
-@property(strong, nonatomic) IBOutlet UIButton *weatherButton;
+@property(strong, nonatomic) HomeTitleView *titleView;
 
 @property(strong, nonatomic) UIImageView *backgroundImageView;  //不删
 
@@ -68,10 +71,11 @@
     self.navigationController.navigationBarHidden=NO;
     self.title = @"欢迎会员";
     
-    [self handlerAutoLogin];
+    if (![DBM dbm].isLogined) {
+        [self handlerAutoLogin];
+    }
     
     [self setUI];
-    
     
     NSMutableArray *arr = [NSMutableArray array];
     for (int i = 0; i< 10; i++) {
@@ -116,10 +120,6 @@
     
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -127,21 +127,14 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.launcherView = nil;
+        self.launcherViewController = nil;
+        self.goalLabel = nil;
+        self.paramLabel = nil;
+        self.tickerView = nil;
+        self.titleView = nil;
+        self.backgroundImageView = nil;
     }
-    
-    self.launcherView = nil;
-    self.launcherViewController = nil;
-    self.goalLabel = nil;
-    self.paramLabel = nil;
-    self.tickerView = nil;
-    self.titleView = nil;
-    self.greetLabel = nil;
-    self.nameLabel = nil;
-    self.integralLabel = nil;
-    self.weatherButton = nil;
-    self.backgroundImageView = nil;
-    
-    self.wlhyXmpp = nil;
 }
 
 -(void)dealloc
@@ -297,63 +290,16 @@
 
 - (void)updateDisplay
 {
-    Users * users = [[DBM dbm] currentUsers];
-    
-    NSString * title =@"";
-    if(users){
-        if(!IsEmptyString( users.userName)){
-            title = users.userName;
-        }else {
-            title = [users.memberId stringValue];
-        }
+    if (!_titleView) {
+        _titleView = [[HomeTitleView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     }
+    [_titleView updateDisplay];
     
-    self.title = [NSString stringWithFormat:@"%@",title];
-    
-    self.navigationItem.titleView = [self getTitleView];
+    self.navigationItem.titleView = _titleView;
     
     [_homeTitleViewController updateDisplay];
 }
 
-- (UIView *)getTitleView
-{
-    if (!_titleView) {
-        _titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    }
-    
-    //问候：：
-    _greetLabel.text = @"";
-    NSDateComponents *dc = [[NSCalendar currentCalendar] components:NSHourCalendarUnit fromDate:[NSDate date]];
-    NSInteger hour = [dc hour];
-    
-    if (hour <= 12) {
-        _greetLabel.text = @"上午好，";
-    } else if (hour <= 18) {
-        _greetLabel.text = @"下午好，";
-    } else if (hour <= 24) {
-        _greetLabel.text = @"晚上好，";
-    } else {
-        _greetLabel.text = @"您好，";
-    }
-    
-    
-    Users * users = [[DBM dbm] currentUsers];
-    NSString * title =@"游客";
-    if(users){
-        if(!IsEmptyString( users.userName)){
-            title = users.userName;
-        }else {
-            title = [users.memberId stringValue];
-        }
-    }
-    
-    _nameLabel.text = [NSString stringWithFormat:@"%@",title];
-    
-    _integralLabel.text = WlhyString([DBM dbm].usersExt.hdi);
-    [_weatherButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-    return _titleView;
-    
-}
 
 - (WlhyHomeTitleViewController*)homeTitleViewController
 {

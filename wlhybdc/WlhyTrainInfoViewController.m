@@ -100,20 +100,21 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.trainImageView = nil;
+        self.trainNameLabel = nil;
+        self.trainLevelLabel = nil;
+        self.trainSexLabel = nil;
+        self.trainStatusLabel = nil;
+        self.trainQQLabel = nil;
+        self.trainWorkTimeLabel = nil;
+        self.trainTelLabel = nil;
+        self.trainIntroductionLabel = nil;
+        self.trainExperienceLabel = nil;
+        self.bindButton = nil;
+        
+        self.trainInfo = nil;
     }
-    self.trainImageView = nil;
-    self.trainNameLabel = nil;
-    self.trainLevelLabel = nil;
-    self.trainSexLabel = nil;
-    self.trainStatusLabel = nil;
-    self.trainQQLabel = nil;
-    self.trainWorkTimeLabel = nil;
-    self.trainTelLabel = nil;
-    self.trainIntroductionLabel = nil;
-    self.trainExperienceLabel = nil;
-    self.bindButton = nil;
     
-    self.trainInfo = nil;
 }
 
 #pragma mark - processRequest
@@ -273,7 +274,23 @@
      @property(strong, nonatomic) IBOutlet UILabel *trainExperienceLabel;
     */
     
-    [_trainImageView setImageWithURL:[NSURL URLWithString:[_trainInfo objectForKey:@"picture"]]];
+    
+    NSString *picPath = [_trainInfo objectForKey:@"picture"];
+    __block WlhyTrainInfoViewController *this = self;
+    __block NSDictionary *blockDic = _trainInfo;
+    [_trainImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:picPath]]
+                                    placeholderImage:[UIImage imageNamed: ((int)[_trainInfo objectForKey:@"sex"] == 2) ? @"head_f.png" : @"head_m.png"]
+                                             success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                                 [this.trainImageView setImage:image];
+                                             }
+                                             failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                                 [this.trainImageView setImage:[UIImage imageNamed: ([[blockDic objectForKey:@"sex"] integerValue] == 2) ? @"head_f.png" : @"head_m.png"]];
+                                             }];
+    
+    _trainImageView.layer.cornerRadius = 4;
+    _trainImageView.layer.borderWidth = 2;
+    _trainImageView.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1].CGColor;
+    
     _trainNameLabel.text = [_trainInfo objectForKey:@"userName"];
     _trainSexLabel.text = ([[_trainInfo objectForKey:@"sex"] integerValue] == 1) ? @"男" : @"女";
     _trainLevelLabel.text = [_trainInfo objectForKey:@"level"];
@@ -284,8 +301,9 @@
     _trainExperienceLabel.text = [_trainInfo objectForKey:@"experience"];
     
     _trainStatusLabel.text = [_trainInfo objectForKey:@"isonline"];
+    _trainStatusLabel.textColor = [UIColor darkGrayColor];
     if ([_trainStatusLabel.text isEqualToString:@"离线"]) {
-        _trainStatusLabel.textColor = [UIColor colorWithRed:0.9 green:0.4 blue:0.4 alpha:1.0];
+        _trainStatusLabel.textColor = AlertColor;
     }
 }
 
@@ -341,6 +359,15 @@
             [destVC setValue:@YES forKey:@"isBackFromTrainSelection"];
         }
         [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:2]animated:NO];
+        
+    }  else if (_rechargeVCPurpose == RechargeVCPurposeScanList) {
+        //普通查看：：
+        NSString *memberStatus = getMemberStatus();
+        if ([memberStatus isEqualToString:@"服务未激活"]) {
+            [self showText:@"对不起，您的服务未激活"];
+        } else if ([memberStatus isEqualToString:@"服务已到期"]) {
+            [self showText:@"对不起，您的服务已到期"];
+        }
         
     }
     

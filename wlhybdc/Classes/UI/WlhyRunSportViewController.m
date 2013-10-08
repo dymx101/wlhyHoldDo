@@ -303,42 +303,41 @@ static CGFloat TimerInterval = 0.5f;
 {
     [super didReceiveMemoryWarning];
     
-    [_iFlySpeechSynthesizer setDelegate:nil];
-    self.iFlySpeechSynthesizer = nil;
-    [_sportRunTimer invalidate];
-    
-    self.barDecode = nil;
-    self.prescriptionId = nil;
-    self.commonPrescTag = nil;
-    
-    self.dataSource = nil;
-    self.animationImageView = nil;
-    self.serverConnectionStateLabel = nil;
-    self.equipConnectionStateLabel = nil;
-    self.currentStepLabel = nil;
-    self.currentSpeedLabel = nil;
-    self.currentSlopeLabel = nil;
-    self.currentStepTimeLabel = nil;
-    self.dropButtonView = nil;
-    
-    self.iFlySpeechSynthesizer = nil;
-    self.sportCell = nil;
-    self.audioPlayer = nil;
-    
-    
-    self.bdrConnPath = nil;
-    
-    self.prepareTImer = nil;
-    self.sportRunTimer = nil;
-    self.startTime = nil;
-    self.endTime = nil;
-    self.storeTime = nil;
-    self.animationImageArray = nil;
-    self.runView = nil;
-    self.sportGuideMessageView = nil;
-    
     if (self.view.window == nil) {
         self.view = nil;
+        [_iFlySpeechSynthesizer setDelegate:nil];
+        self.iFlySpeechSynthesizer = nil;
+        [_sportRunTimer invalidate];
+        
+        self.barDecode = nil;
+        self.prescriptionId = nil;
+        self.commonPrescTag = nil;
+        
+        self.dataSource = nil;
+        self.animationImageView = nil;
+        self.serverConnectionStateLabel = nil;
+        self.equipConnectionStateLabel = nil;
+        self.currentStepLabel = nil;
+        self.currentSpeedLabel = nil;
+        self.currentSlopeLabel = nil;
+        self.currentStepTimeLabel = nil;
+        self.dropButtonView = nil;
+        
+        self.iFlySpeechSynthesizer = nil;
+        self.sportCell = nil;
+        self.audioPlayer = nil;
+        
+        
+        self.bdrConnPath = nil;
+        
+        self.prepareTImer = nil;
+        self.sportRunTimer = nil;
+        self.startTime = nil;
+        self.endTime = nil;
+        self.storeTime = nil;
+        self.animationImageArray = nil;
+        self.runView = nil;
+        self.sportGuideMessageView = nil;
     }
 }
 

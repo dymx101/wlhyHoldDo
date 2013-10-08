@@ -147,25 +147,25 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.inputBar.delegate = nil;
+        
+        self.chartDataSource = nil;
+        self.trainInfo = nil;
+        self.trainAccount = nil;
+        self.trainServerName = nil;
+        self.wlhyXmpp = nil;
+        self.chatBubbleTableView = nil;
+        self.trainInfoView = nil;
+        self.inputBar = nil;
+        self.trainImageView = nil;
+        self.trainStatusLabel = nil;
+        self.trainNameLabel = nil;
+        self.trainTelLabel = nil;
+        self.trainClubLabel = nil;
+        self.trainWorkTimeLabel = nil;
+        self.commentTrainView = nil;
+        self.mobileTelButtton = nil;
     }
-    self.inputBar.delegate = nil;
-    
-    self.chartDataSource = nil;
-    self.trainInfo = nil;
-    self.trainAccount = nil;
-    self.trainServerName = nil;
-    self.wlhyXmpp = nil;
-    self.chatBubbleTableView = nil;
-    self.trainInfoView = nil;
-    self.inputBar = nil;
-    self.trainImageView = nil;
-    self.trainStatusLabel = nil;
-    self.trainNameLabel = nil;
-    self.trainTelLabel = nil;
-    self.trainClubLabel = nil;
-    self.trainWorkTimeLabel = nil;
-    self.commentTrainView = nil;
-    self.mobileTelButtton = nil;
 }
 
 - (void)back:(id)sender

@@ -72,9 +72,10 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.destLabel = nil;
+        self.introTextView = nil;
     }
-    self.destLabel = nil;
-    self.introTextView = nil;
+    
 }
 
 - (void)back:(id)sender

@@ -80,10 +80,11 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.instructionPath = nil;
+        self.webView = nil;
+        self.downLoader = nil;
     }
-    self.instructionPath = nil;
-    self.webView = nil;
-    self.downLoader = nil;
+    
 }
 
 - (void)back:(id)sender

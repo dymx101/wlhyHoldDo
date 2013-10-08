@@ -1,20 +1,18 @@
 //
-//  WlhyHoldDoStoreViewController.m
+//  WlhyCountChartViewController.m
 //  wlhybdc
 //
-//  Created by ios on 13-8-18.
+//  Created by Hello on 13-10-8.
 //  Copyright (c) 2013年 linglong meng. All rights reserved.
 //
 
-#import "WlhyHoldDoStoreViewController.h"
+#import "WlhyCountChartViewController.h"
 
-@interface WlhyHoldDoStoreViewController ()
-
-@property(strong, nonatomic) IBOutlet UIWebView *webView;
+@interface WlhyCountChartViewController ()
 
 @end
 
-@implementation WlhyHoldDoStoreViewController
+@implementation WlhyCountChartViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.title = @"慧动商城";
+	
+    self.title = @"健身历史数据";
     
     //自定义返回：：
     self.navigationItem.hidesBackButton = YES;
@@ -42,10 +40,7 @@
     backButton.frame = CGRectMake(0, 0, 62, 40);
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = backItem;
-	
-    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.taobao.com/"]
-                                           cachePolicy:NSURLRequestReturnCacheDataElseLoad
-                                       timeoutInterval:10.0f]];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,14 +49,13 @@
     
     if (self.view.window == nil) {
         self.view = nil;
-        self.webView = nil;
+        
     }
-    
 }
 
 - (void)back:(id)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

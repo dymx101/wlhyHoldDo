@@ -187,10 +187,11 @@
 
     if (self.view.window == nil) {
         self.view = nil;
+        self.ownedEquipArray = nil;
+        self.authedEquipArray = nil;
+        self.usedEquipArray = nil;
     }
-    self.ownedEquipArray = nil;
-    self.authedEquipArray = nil;
-    self.usedEquipArray = nil;
+    
 
 }
 

@@ -64,8 +64,11 @@
 {
     [super didReceiveMemoryWarning];
     
-    self.view = nil;
-    self.webView = nil;
+    if (self.view.window == nil) {
+        self.view = nil;
+        self.webView = nil;
+    }
+    
 }
 
 - (void)back:(id)sender

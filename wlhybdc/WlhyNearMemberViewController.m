@@ -120,8 +120,9 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.nearMemberArray = nil;
     }
-    self.nearMemberArray = nil;
+    
 }
 
 - (void)back:(id)sender

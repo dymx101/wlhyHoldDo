@@ -46,6 +46,18 @@
     backButton.frame = CGRectMake(0, 0, 62, 40);
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = backItem;
+    
+    //右侧按钮：：
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightButton setContentMode:UIViewContentModeScaleToFill];
+    [rightButton setTitle:@"查询私教" forState:UIControlStateNormal];
+    rightButton.titleLabel.font = [UIFont boldSystemFontOfSize:15.0];
+    [rightButton setBackgroundImage:[UIImage imageNamed:@"right_img_0.png"] forState:UIControlStateNormal];
+    [rightButton setBackgroundImage:[UIImage imageNamed:@"right_img_1.png"] forState:UIControlStateHighlighted];
+    [rightButton addTarget:self action:@selector(rightItemTouched:) forControlEvents:UIControlEventTouchUpInside];
+    rightButton.frame = CGRectMake(self.view.frame.size.width - 70, 0, 66, 40);
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -61,16 +73,26 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.descLabel = nil;
+        self.introTextView = nil;
+        
+        self.desc = nil;
     }
-    self.descLabel = nil;
-    self.introTextView = nil;
     
-    self.desc = nil;
 }
 
 - (void)back:(id)sender
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)rightItemTouched:(id)sender
+{
+    UIViewController *destVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WlhyRechargeViewController"];
+    if ([destVC respondsToSelector:@selector(setRechargeVCPurpose:)]) {
+        [destVC setValue:[NSNumber numberWithInt:3] forKey:@"rechargeVCPurpose"];
+    }
+    [self.navigationController pushViewController:destVC animated:NO];
 }
 
 - (IBAction)gotoWaiter:(id)sender

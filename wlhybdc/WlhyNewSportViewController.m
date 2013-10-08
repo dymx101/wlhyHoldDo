@@ -72,10 +72,11 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.readerVC = nil;
+        self.prescInfo = nil;
+        self.barDecodeString = nil;
     }
-    self.readerVC = nil;
-    self.prescInfo = nil;
-    self.barDecodeString = nil;
+    
 }
 
 - (void)handlerLocalEquipTypeData:(EquipType)kEquipType
@@ -89,7 +90,7 @@
     
     NSNumber *equipTypeNumber = [NSNumber numberWithInt:kEquipType];
     if (![equipTypeScanned containsObject:equipTypeNumber]) {
-        [equipTypeScanned addObject:equipTypeNumber];
+        [equipTypeScanned insertObject:equipTypeNumber atIndex:0];
     }
     
     [userDefaults setObject:equipTypeScanned forKey:equipTypeKey];

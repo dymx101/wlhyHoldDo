@@ -46,6 +46,7 @@ typedef enum {
 // glob macs
 #define WL_INVALIDATE_TIMER(__TIMER) { [__TIMER invalidate]; __TIMER = nil; }
 #define COLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define AlertColor [UIColor colorWithRed:0.8 green:0 blue:0 alpha:1.0]
 
 
 

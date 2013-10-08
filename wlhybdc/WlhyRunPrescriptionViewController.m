@@ -159,19 +159,18 @@ typedef enum {
 {
     [super didReceiveMemoryWarning];
     
-    self.prescInfo = nil;
-    self.sectionTitleArr = nil;
-    self.sectionTapArray = nil;
-    self.projectNameLabel = nil;
-    self.prescGoalLabel = nil;
-    self.sportTypeLabel = nil;
-    self.goalEnergyLabel = nil;
-    self.equipImageView = nil;
-    self.commonPrescView = nil;
-    self.bigAuthView = nil;
-    
     if (self.view.window == nil) {
         self.view = nil;
+        self.prescInfo = nil;
+        self.sectionTitleArr = nil;
+        self.sectionTapArray = nil;
+        self.projectNameLabel = nil;
+        self.prescGoalLabel = nil;
+        self.sportTypeLabel = nil;
+        self.goalEnergyLabel = nil;
+        self.equipImageView = nil;
+        self.commonPrescView = nil;
+        self.bigAuthView = nil;
     }
 }
 
@@ -627,7 +626,6 @@ typedef enum {
 
 - (IBAction)doSportHandler:(id)sender
 {
-    
     if (authStatus == AuthNoAccess) {
         [self showText:@"对不起，您没有该器械的使用权限"];
         return;

@@ -91,7 +91,7 @@
     
     CGContextSaveGState(context);
     
-    UIColor *lineColor = [UIColor greenColor];
+    UIColor *lineColor = [UIColor colorWithRed:0.5 green:0.9 blue:0.5 alpha:1.0];
     CGContextSetStrokeColorWithColor(context, lineColor.CGColor);
     CGContextSetFillColorWithColor(context, lineColor.CGColor);
     CGContextSetLineCap(context, kCGLineCapRound);

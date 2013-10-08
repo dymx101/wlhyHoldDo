@@ -81,12 +81,13 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.wlhyTextDelegate = nil;
+        self.ratingView = nil;
+        self.phoneTextField = nil;
+        self.contentTextView = nil;
+        self.barDecode = nil;
     }
-    self.wlhyTextDelegate = nil;
-    self.ratingView = nil;
-    self.phoneTextField = nil;
-    self.contentTextView = nil;
-    self.barDecode = nil;
+    
     
 }
 

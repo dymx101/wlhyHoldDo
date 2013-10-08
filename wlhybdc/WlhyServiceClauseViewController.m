@@ -46,8 +46,9 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.contentTextView = nil;
     }
-    self.contentTextView = nil;
+    
 }
 
 - (IBAction)agreeTapped:(id)sender

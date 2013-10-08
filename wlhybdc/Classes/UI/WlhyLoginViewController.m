@@ -91,14 +91,15 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.wlhyTextDelegate = nil;
+        self.username = nil;
+        self.password = nil;
+        self.autoLoginSwitch = nil;
+        self.isLogin = nil;
+        self.pwd = nil;
+        self.isFromVisitorVC = nil;
     }
-    self.wlhyTextDelegate = nil;
-    self.username = nil;
-    self.password = nil;
-    self.autoLoginSwitch = nil;
-    self.isLogin = nil;
-    self.pwd = nil;
-    self.isFromVisitorVC = nil;
+    
     
 }
 

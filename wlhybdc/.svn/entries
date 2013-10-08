@@ -264,6 +264,13 @@ file
 
 add
 
+WlhyCountChartViewController.h
+file
+
+
+
+add
+
 WlhyFitnessTipsViewController.h
 file
 
@@ -279,6 +286,13 @@ dir
 add
 
 WlhyAccountInfoViewController.m
+file
+
+
+
+add
+
+WlhyCountChartViewController.m
 file
 
 
@@ -985,15 +999,15 @@ file
 
 add
 
-zh-Hans.lproj
-dir
+WlhyWeatherViewController.m
+file
 
 
 
 add
 
-WlhyWeatherViewController.m
-file
+zh-Hans.lproj
+dir
 
 
 

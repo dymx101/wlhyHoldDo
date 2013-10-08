@@ -62,11 +62,12 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.vCodeButton = nil;
+        self.phoneTextField = nil;
+        self.vCodeTextField = nil;
+        self.vCodeString = nil;
     }
-    self.vCodeButton = nil;
-    self.phoneTextField = nil;
-    self.vCodeTextField = nil;
-    self.vCodeString = nil;
+    
 }
 
 

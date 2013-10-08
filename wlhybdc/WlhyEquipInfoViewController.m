@@ -301,11 +301,11 @@ const int equipPageSize = 5;
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.equipInfo = nil;
+        self.equipPicArray = nil;
+        self.instructionPath = nil;
+        self.evaluateArray = nil;
     }
-    self.equipInfo = nil;
-    self.equipPicArray = nil;
-    self.instructionPath = nil;
-    self.evaluateArray = nil;
     
 }
 
@@ -596,7 +596,7 @@ const int equipPageSize = 5;
             
             return cell;
         } else if (row == 2) {
-            WlhyEquipButtonCell *cell = [tableView dequeueReusableCellWithIdentifier: @"WlhyEquipButtonCell"];
+            WlhyEquipButtonCell *cell = (WlhyEquipButtonCell *)[tableView dequeueReusableCellWithIdentifier: @"WlhyEquipButtonCell"];
             if (cell == nil)
             {
                 cell = [[WlhyEquipButtonCell alloc] initWithStyle: UITableViewCellStyleValue1
@@ -627,7 +627,8 @@ const int equipPageSize = 5;
         
         if (row == 0) {
             //好评率等：：
-            WlhyEquipEvaluateCountCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"WlhyEquipEvaluateCountCell"];
+            WlhyEquipEvaluateCountCell *cell = (WlhyEquipEvaluateCountCell *)[tableView
+                                                            dequeueReusableHeaderFooterViewWithIdentifier:@"WlhyEquipEvaluateCountCell"];
             if (cell == nil) {
                 cell = [[WlhyEquipEvaluateCountCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"WlhyEquipEvaluateCountCell"];
             }
@@ -663,10 +664,9 @@ const int equipPageSize = 5;
             //评价列表：：
             NSDictionary *evaluateDic = [_evaluateArray objectAtIndex:row - 1];
             
-            WlhyEquipEvaluateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WlhyEquipEvaluateCell"];
+            WlhyEquipEvaluateCell *cell = (WlhyEquipEvaluateCell *)[tableView dequeueReusableCellWithIdentifier:@"WlhyEquipEvaluateCell"];
             [cell.headPicImageView setImageWithURL:[NSURL URLWithString:[evaluateDic objectForKey:@"picpath"]]
                                   placeholderImage:[UIImage imageNamed:@"head_m.png"]];
-            
             
             cell.nameLabel.text = [evaluateDic objectForKey:@"name"];
             cell.timeLabel.text = [[evaluateDic objectForKey:@"createtime"] substringToIndex:10];
@@ -693,6 +693,9 @@ const int equipPageSize = 5;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0) {
+        return;
+    }
     if (indexPath.row == _evaluateArray.count + 1) {
         //正在加载：：
         UITableViewCell *loadMoreCell = [tableView cellForRowAtIndexPath:indexPath];

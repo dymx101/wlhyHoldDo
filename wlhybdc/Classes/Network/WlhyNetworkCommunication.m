@@ -29,7 +29,6 @@ NSString* const wlUploadMemberAvatar = @"/bdcServer/services/member/uploadMember
 
 NSString* const wlRechargeMember= @"/bdcServer/services/memberAccount/rechargeMember";
 NSString* const wlGetMemberInfoRequest= @"/bdcServer/services/member/getMemberInfoRequest";
-NSString* const wlGetMemberFitnessCount = @"/bdcServer/services/memberCount/getMemberFitnessCount";
 NSString* const wlGetAccountInfoRequest = @"/bdcServer/services/memberAccount/getMemberAccountArray";
 NSString* const wlUpdateManifestoRequest = @"/bdcServer/services/member/updateMemberManifesto";
 NSString* const wlGetFrontDeskInfo= @"/bdcServer/services/common/getFrontDeskInfo";
@@ -46,6 +45,7 @@ NSString* const wlGetMessageInfoRequest = @"/bdcServer/services/member/getMember
 NSString* const wlGetEqipInfoRequest = @"/bdcServer/services/common/getEqipRequest";
 NSString* const wlUserRechargeRequest = @"/bdcServer/services/memberAccount/rechargeMember";
 NSString* const wlGetTrainListRequest = @"/bdcServer/services/common/getServicePersonList";
+NSString* const wlGetAllTrainRequest = @"/bdcServer/services/common/getAllServicePersonList";
 NSString* const wlBindTrainRequest = @"/bdcServer/services/common/memberBandPersonaltrainer";
 NSString* const wlChangeTrainRequest = @"/bdcServer/services/member/insertMemberTrainerChg";
 NSString* const wlGetTrainInfoRequest = @"/bdcServer/services/common/getServicePersonInfo";

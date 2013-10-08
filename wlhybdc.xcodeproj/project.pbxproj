@@ -226,6 +226,9 @@
 		81019EBD17BDFCAE00009177 /* xxtx0.png in Resources */ = {isa = PBXBuildFile; fileRef = 81019EBC17BDFCAE00009177 /* xxtx0.png */; };
 		8101A14F179791DF009F680B /* WlhyStationInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8101A14E179791DF009F680B /* WlhyStationInfoViewController.m */; };
 		8101A1521797C0B8009F680B /* WlhyTrainInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8101A1511797C0B8009F680B /* WlhyTrainInfoViewController.m */; };
+		8101B4E41803E5E700BD36DA /* WlhyCountChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8101B4E31803E5E700BD36DA /* WlhyCountChartViewController.m */; };
+		8101B4E71803F94500BD36DA /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8101B4E61803F94500BD36DA /* DatePickerView.m */; };
+		8101B4E91803F96A00BD36DA /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8101B4E81803F96A00BD36DA /* DatePickerView.xib */; };
 		8101EAFF17E18416001BA111 /* WlhyServiceClauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8101EAFE17E18416001BA111 /* WlhyServiceClauseViewController.m */; };
 		8102927E17CCA41300D2DA3B /* WlhyRepairsEquipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102927D17CCA41300D2DA3B /* WlhyRepairsEquipViewController.m */; };
 		8102928317CCB23400D2DA3B /* WlhyEquipInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102928217CCB23400D2DA3B /* WlhyEquipInfoViewController.m */; };
@@ -327,8 +330,6 @@
 		8125DCD717B2381A00C47CD4 /* presc2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8125DCD317B2381A00C47CD4 /* presc2.txt */; };
 		8125DCD817B2381A00C47CD4 /* presc3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8125DCD417B2381A00C47CD4 /* presc3.txt */; };
 		8125DCD917B2381A00C47CD4 /* presc4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8125DCD517B2381A00C47CD4 /* presc4.txt */; };
-		8133E1D017B87CBA00DBCE26 /* head_f.png in Resources */ = {isa = PBXBuildFile; fileRef = 8133E1CC17B87CBA00DBCE26 /* head_f.png */; };
-		8133E1D117B87CBA00DBCE26 /* head_m.png in Resources */ = {isa = PBXBuildFile; fileRef = 8133E1CD17B87CBA00DBCE26 /* head_m.png */; };
 		8133E1D217B87CBA00DBCE26 /* head_pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 8133E1CE17B87CBA00DBCE26 /* head_pro.png */; };
 		8133E1D317B87CBA00DBCE26 /* head_sj.png in Resources */ = {isa = PBXBuildFile; fileRef = 8133E1CF17B87CBA00DBCE26 /* head_sj.png */; };
 		8133E1D717B87F1800DBCE26 /* wcfman.png in Resources */ = {isa = PBXBuildFile; fileRef = 8133E1D417B87F1800DBCE26 /* wcfman.png */; };
@@ -688,6 +689,10 @@
 		816A5B9517E992CA001AE375 /* trainSound0.png in Resources */ = {isa = PBXBuildFile; fileRef = 816A5B9117E992CA001AE375 /* trainSound0.png */; };
 		816A5B9617E992CA001AE375 /* trainSound1.png in Resources */ = {isa = PBXBuildFile; fileRef = 816A5B9217E992CA001AE375 /* trainSound1.png */; };
 		816A5B9917E99482001AE375 /* DropButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 816A5B9817E99482001AE375 /* DropButtonView.m */; };
+		816F27C617F9183C00335CD9 /* head_f.png in Resources */ = {isa = PBXBuildFile; fileRef = 816F27C417F9183C00335CD9 /* head_f.png */; };
+		816F27C717F9183C00335CD9 /* head_m.png in Resources */ = {isa = PBXBuildFile; fileRef = 816F27C517F9183C00335CD9 /* head_m.png */; };
+		816F27CC17F96B5D00335CD9 /* HomeTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 816F27CB17F96B5D00335CD9 /* HomeTitleView.xib */; };
+		816F27CF17F96B8800335CD9 /* HomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 816F27CE17F96B8800335CD9 /* HomeTitleView.m */; };
 		8171ACA117C46C41001C012A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8171ACA017C46C41001C012A /* Default.png */; };
 		8171ACA317C46C46001C012A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8171ACA217C46C46001C012A /* Default@2x.png */; };
 		8171ACA517C46C49001C012A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8171ACA417C46C48001C012A /* Default-568h@2x.png */; };
@@ -1136,6 +1141,11 @@
 		8101A14E179791DF009F680B /* WlhyStationInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WlhyStationInfoViewController.m; sourceTree = "<group>"; };
 		8101A1501797C0B8009F680B /* WlhyTrainInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WlhyTrainInfoViewController.h; sourceTree = "<group>"; };
 		8101A1511797C0B8009F680B /* WlhyTrainInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WlhyTrainInfoViewController.m; sourceTree = "<group>"; };
+		8101B4E21803E5E700BD36DA /* WlhyCountChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WlhyCountChartViewController.h; sourceTree = "<group>"; };
+		8101B4E31803E5E700BD36DA /* WlhyCountChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WlhyCountChartViewController.m; sourceTree = "<group>"; };
+		8101B4E51803F94500BD36DA /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerView.h; path = Classes/UI/DatePickerView.h; sourceTree = "<group>"; };
+		8101B4E61803F94500BD36DA /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerView.m; path = Classes/UI/DatePickerView.m; sourceTree = "<group>"; };
+		8101B4E81803F96A00BD36DA /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerView.xib; path = Classes/UI/DatePickerView.xib; sourceTree = "<group>"; };
 		8101EAFD17E18416001BA111 /* WlhyServiceClauseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WlhyServiceClauseViewController.h; sourceTree = "<group>"; };
 		8101EAFE17E18416001BA111 /* WlhyServiceClauseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WlhyServiceClauseViewController.m; sourceTree = "<group>"; };
 		8102927C17CCA41300D2DA3B /* WlhyRepairsEquipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WlhyRepairsEquipViewController.h; sourceTree = "<group>"; };
@@ -1278,8 +1288,6 @@
 		8125DCD317B2381A00C47CD4 /* presc2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = presc2.txt; sourceTree = "<group>"; };
 		8125DCD417B2381A00C47CD4 /* presc3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = presc3.txt; sourceTree = "<group>"; };
 		8125DCD517B2381A00C47CD4 /* presc4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = presc4.txt; sourceTree = "<group>"; };
-		8133E1CC17B87CBA00DBCE26 /* head_f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_f.png; sourceTree = "<group>"; };
-		8133E1CD17B87CBA00DBCE26 /* head_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_m.png; sourceTree = "<group>"; };
 		8133E1CE17B87CBA00DBCE26 /* head_pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_pro.png; sourceTree = "<group>"; };
 		8133E1CF17B87CBA00DBCE26 /* head_sj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_sj.png; sourceTree = "<group>"; };
 		8133E1D417B87F1800DBCE26 /* wcfman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wcfman.png; path = ../wcfman.png; sourceTree = "<group>"; };
@@ -1783,6 +1791,11 @@
 		816A5B9217E992CA001AE375 /* trainSound1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trainSound1.png; sourceTree = "<group>"; };
 		816A5B9717E99482001AE375 /* DropButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropButtonView.h; path = Classes/UI/DropButtonView.h; sourceTree = "<group>"; };
 		816A5B9817E99482001AE375 /* DropButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropButtonView.m; path = Classes/UI/DropButtonView.m; sourceTree = "<group>"; };
+		816F27C417F9183C00335CD9 /* head_f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_f.png; sourceTree = "<group>"; };
+		816F27C517F9183C00335CD9 /* head_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_m.png; sourceTree = "<group>"; };
+		816F27CB17F96B5D00335CD9 /* HomeTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeTitleView.xib; path = Classes/UI/HomeTitleView.xib; sourceTree = "<group>"; };
+		816F27CD17F96B8700335CD9 /* HomeTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeTitleView.h; path = Classes/UI/HomeTitleView.h; sourceTree = "<group>"; };
+		816F27CE17F96B8800335CD9 /* HomeTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTitleView.m; path = Classes/UI/HomeTitleView.m; sourceTree = "<group>"; };
 		8171ACA017C46C41001C012A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8171ACA217C46C46001C012A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8171ACA417C46C48001C012A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -2542,6 +2555,12 @@
 				8108DAD917EEEF36006F6107 /* CommentTrainView.xib */,
 				8108DADB17EEEF55006F6107 /* CommentTrainView.h */,
 				8108DADC17EEEF55006F6107 /* CommentTrainView.m */,
+				8101B4E81803F96A00BD36DA /* DatePickerView.xib */,
+				8101B4E51803F94500BD36DA /* DatePickerView.h */,
+				8101B4E61803F94500BD36DA /* DatePickerView.m */,
+				816F27CB17F96B5D00335CD9 /* HomeTitleView.xib */,
+				816F27CD17F96B8700335CD9 /* HomeTitleView.h */,
+				816F27CE17F96B8800335CD9 /* HomeTitleView.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -2991,9 +3010,9 @@
 		81473C5B17B9C83100ACC768 /* head pic */ = {
 			isa = PBXGroup;
 			children = (
+				816F27C417F9183C00335CD9 /* head_f.png */,
+				816F27C517F9183C00335CD9 /* head_m.png */,
 				81473C5C17B9DE6E00ACC768 /* default_qt.png */,
-				8133E1CC17B87CBA00DBCE26 /* head_f.png */,
-				8133E1CD17B87CBA00DBCE26 /* head_m.png */,
 				8133E1CE17B87CBA00DBCE26 /* head_pro.png */,
 				8133E1CF17B87CBA00DBCE26 /* head_sj.png */,
 			);
@@ -4165,6 +4184,8 @@
 				814AC1C917BE2AF400D7AEFA /* WlhyAccountInfoViewController.m */,
 				59D8F6BF165377590089F6BD /* WlhyFitnessCountViewController.h */,
 				59D8F6C0165377590089F6BD /* WlhyFitnessCountViewController.m */,
+				8101B4E21803E5E700BD36DA /* WlhyCountChartViewController.h */,
+				8101B4E31803E5E700BD36DA /* WlhyCountChartViewController.m */,
 			);
 			name = "Member Center";
 			sourceTree = "<group>";
@@ -4407,8 +4428,6 @@
 				8123630817B636FB00318A35 /* sport_data_ydscimg.png in Resources */,
 				81E23F8417B6448E0078E746 /* lstb00.png in Resources */,
 				81E23F8517B6448E0078E746 /* lstb01.png in Resources */,
-				8133E1D017B87CBA00DBCE26 /* head_f.png in Resources */,
-				8133E1D117B87CBA00DBCE26 /* head_m.png in Resources */,
 				8133E1D217B87CBA00DBCE26 /* head_pro.png in Resources */,
 				8133E1D317B87CBA00DBCE26 /* head_sj.png in Resources */,
 				8133E1D717B87F1800DBCE26 /* wcfman.png in Resources */,
@@ -4711,6 +4730,10 @@
 				8154B8CC17F3E93F00746057 /* jrcf_tyj_img.jpg in Resources */,
 				8154B8CE17F3FFEE00746057 /* jrcf_pbj_img.jpg in Resources */,
 				817596B317F82EFC00A5083C /* qcxx0.png in Resources */,
+				816F27C617F9183C00335CD9 /* head_f.png in Resources */,
+				816F27C717F9183C00335CD9 /* head_m.png in Resources */,
+				816F27CC17F96B5D00335CD9 /* HomeTitleView.xib in Resources */,
+				8101B4E91803F96A00BD36DA /* DatePickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5021,6 +5044,9 @@
 				816A5B9917E99482001AE375 /* DropButtonView.m in Sources */,
 				8108DADD17EEEF55006F6107 /* CommentTrainView.m in Sources */,
 				8177B19A17F13291002EF466 /* WlhyFitnessGoalViewController.m in Sources */,
+				816F27CF17F96B8800335CD9 /* HomeTitleView.m in Sources */,
+				8101B4E41803E5E700BD36DA /* WlhyCountChartViewController.m in Sources */,
+				8101B4E71803F94500BD36DA /* DatePickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

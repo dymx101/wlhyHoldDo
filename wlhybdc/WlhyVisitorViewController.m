@@ -76,10 +76,9 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.readerView = nil;
+        self.barDecode = nil;
     }
-    
-    self.readerView = nil;
-    self.barDecode = nil;
 }
 
 #pragma mark - ZBarReaderView delegate

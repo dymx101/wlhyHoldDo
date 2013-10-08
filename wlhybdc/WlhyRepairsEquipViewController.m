@@ -91,15 +91,16 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.wlhyTextDelegate = nil;
+        self.nameArray = nil;
+        self.imagePickerVC = nil;
+        self.bigPicScrollView = nil;
+        self.picScrollView = nil;
+        self.phoneTextField = nil;
+        self.contentTextView = nil;
+        self.barDecode = nil;
     }
-    self.wlhyTextDelegate = nil;
-    self.nameArray = nil;
-    self.imagePickerVC = nil;
-    self.bigPicScrollView = nil;
-    self.picScrollView = nil;
-    self.phoneTextField = nil;
-    self.contentTextView = nil;
-    self.barDecode = nil;
+    
 }
 
 #pragma mark - button Handler

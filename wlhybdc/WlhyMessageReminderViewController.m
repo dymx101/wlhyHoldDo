@@ -136,9 +136,10 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.systemMessageArray = nil;
+        self.headerView = nil;
     }
-    self.systemMessageArray = nil;
-    self.headerView = nil;
+    
     
 }
 

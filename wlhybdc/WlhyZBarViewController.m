@@ -89,12 +89,6 @@
     [_readerView stop];
 }
 
-- (void)viewDidUnload
-{
-    
-    
-    [super viewDidUnload];
-}
 
 - (void)didReceiveMemoryWarning
 {

@@ -68,22 +68,14 @@
     [_manifestoTextView becomeFirstResponder];
 }
 
-- (void)viewDidUnload
-{
-    self.manifestoTextView = nil;
-    
-    [super viewDidUnload];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.manifestoTextView = nil;
     }
-    self.manifestoTextView = nil;
-    
 }
 
 - (void)rightItemTouched:(id)sender

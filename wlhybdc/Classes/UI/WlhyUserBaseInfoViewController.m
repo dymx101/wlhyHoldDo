@@ -122,21 +122,20 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.memberIdLabel = nil;
+        self.telphoneLabel = nil;
+        self.nameTextField = nil;
+        self.cityTextField = nil;
+        self.sexSegmente = nil;
+        self.heightTextField = nil;
+        self.weightTextField = nil;
+        self.waistTextField = nil;
+        self.birthdayTextField = nil;
+        self.datePicker = nil;
+        
+        self.baseInfo = nil;
+        self.cityPickerView = nil;
     }
-    self.memberIdLabel = nil;
-    self.telphoneLabel = nil;
-    self.nameTextField = nil;
-    self.cityTextField = nil;
-    self.sexSegmente = nil;
-    self.heightTextField = nil;
-    self.weightTextField = nil;
-    self.waistTextField = nil;
-    self.birthdayTextField = nil;
-    self.datePicker = nil;
-    
-    
-    self.baseInfo = nil;
-    self.cityPickerView = nil;
 }
 
 - (void)dealloc

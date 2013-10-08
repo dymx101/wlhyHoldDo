@@ -108,11 +108,10 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.currentNameLabel = nil;
+        self.goalNameLabel = nil;
+        self.inputTextView = nil;
     }
-    self.currentNameLabel = nil;
-    self.goalNameLabel = nil;
-    self.inputTextView = nil;
-
 }
 
 - (void)back:(id)sender

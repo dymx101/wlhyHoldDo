@@ -71,18 +71,14 @@
     
 }
 
-
-- (void)viewDidUnload
-{
-    [self setAdviceTextView:nil];
-    
-    [super viewDidUnload];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.view.window == nil) {
+        self.view = nil;
+        self.adviceTextView = nil;
+    }
 }
 
 - (void)back:(id)sender

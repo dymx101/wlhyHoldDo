@@ -94,23 +94,24 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.heightLabel = nil;
+        self.weightLabel = nil;
+        self.waistLabel = nil;
+        self.fllLabel = nil;
+        self.qztzLabel = nil;
+        self.zfLabel = nil;
+        self.jrLabel = nil;
+        self.sfLabel = nil;
+        self.wjyLabel = nil;
+        self.dbzLabel = nil;
+        self.xbnyLabel = nil;
+        self.xbwyLabel = nil;
+        self.ssyLabel = nil;
+        self.szyLabel = nil;
+        self.xlLabel = nil;
+        self.updateTimeLabel = nil;
     }
-    self.heightLabel = nil;
-    self.weightLabel = nil;
-    self.waistLabel = nil;
-    self.fllLabel = nil;
-    self.qztzLabel = nil;
-    self.zfLabel = nil;
-    self.jrLabel = nil;
-    self.sfLabel = nil;
-    self.wjyLabel = nil;
-    self.dbzLabel = nil;
-    self.xbnyLabel = nil;
-    self.xbwyLabel = nil;
-    self.ssyLabel = nil;
-    self.szyLabel = nil;
-    self.xlLabel = nil;
-    self.updateTimeLabel = nil;
+    
     
 }
 

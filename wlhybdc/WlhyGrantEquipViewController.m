@@ -64,12 +64,13 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.wlhyTextDelegate = nil;
+        self.phoneNumberField = nil;
+        self.dayField = nil;
+        self.barDecode = nil;
+        self.barDecodeLabel = nil;
     }
-    self.wlhyTextDelegate = nil;
-    self.phoneNumberField = nil;
-    self.dayField = nil;
-    self.barDecode = nil;
-    self.barDecodeLabel = nil;
+    
 }
 
 - (void)back:(id)sender

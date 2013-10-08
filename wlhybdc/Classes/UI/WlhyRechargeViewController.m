@@ -124,6 +124,22 @@
             [destVC setValue:self forKey:@"delegate"];
         }
         [self presentModalViewController:destVC animated:YES];
+    } else if (_rechargeVCPurpose == RechargeVCPurposeScanList) {
+        //二维码扫描：：
+        
+        if (_trainArray) {
+            return;
+        }
+        
+        [self sendRequest:
+         
+         @{
+         @"memberId": [DBM dbm].currentUsers.memberId,
+         @"pwd": [DBM dbm].currentUsers.pwd
+         }
+         
+                   action:wlGetAllTrainRequest
+            baseUrlString:wlServer];
     }
 }
 
@@ -133,8 +149,9 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.trainArray = nil;
     }
-    self.trainArray = nil;
+    
 }
 
 - (void)back:(id)sender
@@ -215,7 +232,7 @@
     NSLog(@"info :: %@ --- error :: %@", info, error);
     
     
-    if(!error){
+    if(info){
         
         NSNumber* errorCode = [info objectForKey:@"errorCode"];
         
@@ -283,7 +300,7 @@
                 //已被使用过::
                 [self handlerCardBeUsed:info];
             }
-        } else if ([action isEqualToString:wlGetTrainListRequest]) {
+        } else if ([action isEqualToString:wlGetTrainListRequest] || [action isEqualToString:wlGetAllTrainRequest]) {
             
             if ([errorCode intValue] == 0) {
                 //获取私教列表成功的回复,用返回的列表数据布局私教tableview：：
@@ -348,6 +365,7 @@
         }
             
     } else {
+        //接收数据出错：：
         if ([action isEqualToString:wlUserRechargeRequest]) {
             //充值请求发生未知错误：：
             [self handlerRechargeError];
@@ -389,24 +407,32 @@
     cell.trainHonorLabel.text = [trainInfo objectForKey:@"honor"];
     cell.trainIntroductionLabel.text = [trainInfo objectForKey:@"introduction"];
     cell.trainWorkTimeLabel.text = [trainInfo objectForKey:@"worktime"];
+    
     cell.trainStatusLabel.text = ([[trainInfo objectForKey:@"isonline"] integerValue] == 1) ? @"在线" : @"离线";
     cell.trainStatusLabel.textColor = [UIColor darkGrayColor];
     if ([[trainInfo objectForKey:@"isonline"] integerValue] != 1) {
-        cell.trainStatusLabel.textColor = [UIColor colorWithRed:0.9 green:0.4 blue:0.4 alpha:1.0];
+        cell.trainStatusLabel.textColor = AlertColor;
     }
     
     NSString *picPath = [trainInfo objectForKey:@"picture"];
-    if ([picPath isEqualToString:@""]) {
-        UIImage *headImage = ((int)[trainInfo objectForKey:@"SEX"] == 2) ? [UIImage imageNamed:@"head_f.png"] : [UIImage imageNamed:@"head_m.png"];
-        [cell.trainThumbImageView setImage:headImage];
-        
-    } else {
-        [cell.trainThumbImageView setImageWithURL:[NSURL URLWithString:picPath]];
-    }
+    __block WlhyPrivateTrainCell *thisCell = cell;
+    [cell.trainThumbImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:picPath]]
+                                     placeholderImage:[UIImage imageNamed: ((int)[trainInfo objectForKey:@"SEX"] == 2) ? @"head_f.png" : @"head_m.png"]
+                                              success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                                  [thisCell.trainThumbImageView setImage:image];
+                                              }
+                                              failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                                  if ([[trainInfo objectForKey:@"SEX"] intValue] == 1) {
+                                                      [thisCell.trainThumbImageView setImage:[UIImage imageNamed:@"head_m.png"]];
+                                                  } else {
+                                                      [thisCell.trainThumbImageView setImage:[UIImage imageNamed:@"head_f.png"]];
+                                                  }
+                                              }];
     cell.trainThumbImageView.layer.cornerRadius = 4;
     cell.trainThumbImageView.layer.borderWidth = 2;
-    cell.trainThumbImageView.layer.borderColor = [UIColor colorWithRed:0.3 green:0.3 blue:1.6 alpha:0.4].CGColor;
+    cell.trainThumbImageView.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1].CGColor;
     
+    cell.trainSexImageView .hidden = NO;
     if (([[trainInfo objectForKey:@"sex"] integerValue] == 1)) {
         NSString *sexPicString = @"maleIcon.png";
         [cell.trainSexImageView setImage:[UIImage imageNamed:sexPicString]];
@@ -501,9 +527,7 @@
         NSNumber *idNumber = [NSNumber numberWithInteger:
                               [[[_trainArray objectAtIndex:row] objectForKey:@"userId"] integerValue]];
         [destVC setValue:idNumber forKey:@"trainID"];
-        if (_rechargeVCPurpose == RechargeVCPurposeChangeTrain || _rechargeVCPurpose == RechargeVCPurposeSportGuide) {
-            [destVC setValue:[NSNumber numberWithInt:_rechargeVCPurpose] forKey:@"rechargeVCPurpose"];
-        }
+        [destVC setValue:[NSNumber numberWithInt:_rechargeVCPurpose] forKey:@"rechargeVCPurpose"];
         
         [self.navigationController pushViewController:destVC animated:YES];
     }

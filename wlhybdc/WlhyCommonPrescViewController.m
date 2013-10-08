@@ -45,11 +45,12 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.presc1 = nil;
+        self.presc2 = nil;
+        self.presc3 = nil;
+        self.presc4 = nil;
     }
-    self.presc1 = nil;
-    self.presc2 = nil;
-    self.presc3 = nil;
-    self.presc4 = nil;
+    
 }
 
 #pragma mark - IBAction

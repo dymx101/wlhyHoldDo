@@ -12,6 +12,7 @@ typedef enum {
     RechargeVCPurposeRecharge = 0,
     RechargeVCPurposeChangeTrain = 1,
     RechargeVCPurposeSportGuide = 2,
+    RechargeVCPurposeScanList = 3
 }RechargeVCPurpose;
 
 @interface WlhyRechargeViewController : UITableViewController

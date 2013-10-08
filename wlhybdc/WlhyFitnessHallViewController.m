@@ -174,26 +174,27 @@ const int pageSize = 10;
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.hallMemberArray = nil;
+        self.currentIndexPath = nil;
+        self.hallMemberTableView = nil;
+        self.nearMemberButton = nil;
+        self.memberHeadImageView = nil;
+        self.memberNameLabel = nil;
+        self.memberTimeLabel = nil;
+        self.memberDistanceLabel = nil;
+        self.memberEnergyLabel = nil;
+        self.rivalHeadImageView = nil;
+        self.rivalNameLabel = nil;
+        self.rivalTimeLabel = nil;
+        self.rivalDistanceLabel = nil;
+        self.rivalEnergyLabel = nil;
+        self.distanceTogetherLabel = nil;
+        self.clubRankLabel = nil;
+        self.totalRankLabel = nil;
+        self.locationManager = nil;
+        self.backgroundImageView = nil;
     }
-    self.hallMemberArray = nil;
-    self.currentIndexPath = nil;
-    self.hallMemberTableView = nil;
-    self.nearMemberButton = nil;
-    self.memberHeadImageView = nil;
-    self.memberNameLabel = nil;
-    self.memberTimeLabel = nil;
-    self.memberDistanceLabel = nil;
-    self.memberEnergyLabel = nil;
-    self.rivalHeadImageView = nil;
-    self.rivalNameLabel = nil;
-    self.rivalTimeLabel = nil;
-    self.rivalDistanceLabel = nil;
-    self.rivalEnergyLabel = nil;
-    self.distanceTogetherLabel = nil;
-    self.clubRankLabel = nil;
-    self.totalRankLabel = nil;
-    self.locationManager = nil;
-    self.backgroundImageView = nil;
+    
 }
 
 - (void)back:(id)sender
@@ -293,6 +294,7 @@ const int pageSize = 10;
 }
 
 #pragma mark ---  net response function
+
 -(void)processRequest:(NSString *)action info:(NSDictionary *)info error:(NSError *)error
 {
     NSLog(@"action :: %@", action);
@@ -525,9 +527,25 @@ const int pageSize = 10;
         cell.memberNameLabel.text = [memberInfo objectForKey:@"name"];
         cell.ageLabel.text = [NSString stringWithFormat:@"%@岁",
                               [memberInfo objectForKey:@"age"]];
+        if ([[memberInfo objectForKey:@"age"] isEqualToString:@"0"] || [[memberInfo objectForKey:@"age"] length] <= 0) {
+            cell.ageLabel.text = @"";
+        }
+        
+        cell.statusLabel.textColor = [UIColor darkGrayColor];
         cell.statusLabel.text = ([[memberInfo objectForKey:@"isonline"] intValue] == 1) ? @"在线" : @"离线";
+        if (([[memberInfo objectForKey:@"isonline"] intValue] != 1)) {
+            cell.statusLabel.textColor = AlertColor;
+        }
+        
         cell.distanceCountLabel.text = [NSString stringWithFormat:@"%@ km",
                                         [memberInfo objectForKey:@"totaldistance"]];
+        if ([[memberInfo objectForKey:@"totaldistance"] length] > 0 && [[memberInfo objectForKey:@"totaldistance"] integerValue] == 0) {
+            cell.distanceCountLabel.text = @"百米之内";
+        } else if ([[memberInfo objectForKey:@"totaldistance"] length] <= 0) {
+            cell.distanceCountLabel.text = @"千里之外";
+        }
+        
+        
         cell.calCountLabel.text = [NSString stringWithFormat:@"%@",
                                    [memberInfo objectForKey:@"totalenergy"]];
         cell.timeCountLabel.text = [NSString stringWithFormat:@"%@",
@@ -536,23 +554,30 @@ const int pageSize = 10;
         
         
         NSString *picPath = [memberInfo objectForKey:@"picpath"];
-        if ([picPath isEqualToString:@""]) {
-            UIImage *headImage = ((int)[memberInfo objectForKey:@"SEX"] == 2) ? [UIImage imageNamed:@"head_f.png"] : [UIImage imageNamed:@"head_m.png"];
-            [cell.memberThumbImageView setImage:headImage];
-            
-        } else {
-            [cell.memberThumbImageView setImageWithURL:[NSURL URLWithString:picPath]];
+        __block WlhyHallMemberCell *thisCell = cell;
+        [cell.memberThumbImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:picPath]]
+                                         placeholderImage:[UIImage imageNamed: ((int)[memberInfo objectForKey:@"sex"] == 1) ? @"head_m.png" : @"head_f.png"]
+                                                  success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            [thisCell.memberThumbImageView setImage:image];
         }
-        
+                                                  failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+            if ([[memberInfo objectForKey:@"sex"] intValue] == 1) {
+                [thisCell.memberThumbImageView setImage:[UIImage imageNamed:@"head_m.png"]];
+            } else {
+                [thisCell.memberThumbImageView setImage:[UIImage imageNamed:@"head_f.png"]];
+            }
+        }];
         cell.memberThumbImageView.layer.cornerRadius = 4;
         cell.memberThumbImageView.layer.borderWidth = 2;
-        cell.memberThumbImageView.layer.borderColor = [UIColor colorWithRed:0.3 green:0.3 blue:1.6 alpha:0.4].CGColor;
+        cell.memberThumbImageView.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1].CGColor;
         
+        cell.memberSexImageView.hidden = NO;
         NSString *sexImageName = ([[memberInfo objectForKey:@"sex"] intValue] == 1) ? @"maleIcon.png" : @"fmaleIcon.png";
         [cell.memberSexImageView setImage:[UIImage imageNamed:sexImageName]];
         if ([[memberInfo objectForKey:@"sex"] intValue] == 0) {
             cell.memberSexImageView.hidden = YES;
         }
+        
         cell.rankLabel.hidden = YES;
         if ([[memberInfo objectForKey:@"rank"] intValue] == 1) {
             cell.rankLabel.hidden = NO;

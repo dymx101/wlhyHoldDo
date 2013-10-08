@@ -157,25 +157,26 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.chatView = nil;
+        self.chartDataSource = nil;
+        self.waiterAccount = nil;
+        self.waiterServerName = nil;
+        self.hostName = nil;
+        self.hostPort = nil;
+        self.waiterInfoView = nil;
+        self.waiterNameLabel = nil;
+        self.waiterImageView = nil;
+        self.waiterStatusLabel = nil;
+        self.waiterFromLabel = nil;
+        self.waiterIntroLabel = nil;
+        self.inputBar = nil;
+        self.telNumber = nil;
+        self.frontDeskId = nil;
+        
+        self.iFlySpeechRecognizer.delegate = nil;
+        self.iFlySpeechRecognizer = nil;
     }
-    self.chatView = nil;
-    self.chartDataSource = nil;
-    self.waiterAccount = nil;
-    self.waiterServerName = nil;
-    self.hostName = nil;
-    self.hostPort = nil;
-    self.waiterInfoView = nil;
-    self.waiterNameLabel = nil;
-    self.waiterImageView = nil;
-    self.waiterStatusLabel = nil;
-    self.waiterFromLabel = nil;
-    self.waiterIntroLabel = nil;
-    self.inputBar = nil;
-    self.telNumber = nil;
-    self.frontDeskId = nil;
     
-    self.iFlySpeechRecognizer.delegate = nil;
-    self.iFlySpeechRecognizer = nil;
     
 }
 

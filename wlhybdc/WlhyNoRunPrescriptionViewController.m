@@ -73,11 +73,12 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.descLabel = nil;
+        self.introTextView = nil;
+        self.desc = nil;
+        self.commonPrescView = nil;
     }
-    self.descLabel = nil;
-    self.introTextView = nil;
-    self.desc = nil;
-    self.commonPrescView = nil;
+    
 }
 
 

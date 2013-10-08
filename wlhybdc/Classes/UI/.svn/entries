@@ -26,6 +26,13 @@ add
 
 d42514f0-f95f-4ef1-a9c5-a7944b17aa57
 
+HomeTitleView.m
+file
+
+
+
+add
+
 WlhyRootViewController.m
 file
 
@@ -125,6 +132,13 @@ file
 add
 
 WlhyForgotPasswordViewController.m
+file
+
+
+
+add
+
+DatePickerView.xib
 file
 
 
@@ -593,6 +607,13 @@ file
 
 add
 
+DatePickerView.h
+file
+
+
+
+add
+
 WlhyFloatView.m
 file
 
@@ -614,6 +635,13 @@ file
 
 add
 
+DatePickerView.m
+file
+
+
+
+add
+
 WlhyAdviceInfoViewController.m
 file
 
@@ -628,6 +656,13 @@ file
 
 add
 
+HomeTitleView.xib
+file
+
+
+
+add
+
 WlhyLauncherViewModel.h
 file
 
@@ -636,6 +671,13 @@ file
 add
 
 WlhyLabel.h
+file
+
+
+
+add
+
+HomeTitleView.h
 file
 
 

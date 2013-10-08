@@ -85,12 +85,13 @@
    
     if (self.view.window == nil) {
         self.view = nil;
+        self.wlhyTextDelegate = nil;
+        self.phoneTextField = nil;
+        self.addressTextView = nil;
+        self.notesTextView = nil;
+        self.barDecode = nil;
     }
-    self.wlhyTextDelegate = nil;
-    self.phoneTextField = nil;
-    self.addressTextView = nil;
-    self.notesTextView = nil;
-    self.barDecode = nil;
+    
 }
 
 #pragma mark - button Handler

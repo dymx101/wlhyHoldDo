@@ -77,11 +77,11 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        self.sportTimesSegment = nil;
+        self.sportPeriodsView = nil;
+        self.sportItemsView = nil;
+        self.isForMakeUpInfo = nil;
     }
-    self.sportTimesSegment = nil;
-    self.sportPeriodsView = nil;
-    self.sportItemsView = nil;
-    self.isForMakeUpInfo = nil;
 }
 
 #pragma mark - Private Methond

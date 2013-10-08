@@ -68,11 +68,12 @@
     
     if (self.view.window == nil) {
         self.view = nil;
+        [self setUsername:nil];
+        [self setPassword:nil];
+        [self setEnsurePassword:nil];
+        [self setTextFieldDelegate:nil];
     }
-    [self setUsername:nil];
-    [self setPassword:nil];
-    [self setEnsurePassword:nil];
-    [self setTextFieldDelegate:nil];
+    
 }
 
 - (void)back:(id)sender
